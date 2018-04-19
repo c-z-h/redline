@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 
 
 <!DOCTYPE rdf:RDF [
@@ -30,161 +30,161 @@
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#area_of_forest_park -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#area_of_forest_park -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#area_of_forest_park">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#landscape"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#area_of_forest_park">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#landscape"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_diversity -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_diversity -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_diversity">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_diversity">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#ImportantEcologicalFunctionalArea"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_resource -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_resource -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_resource">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_resource">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#ImportantEcologicalFunctionalArea"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#disappear_species_number -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#disappear_species_number -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#disappear_species_number">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_diversity"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#disappear_species_number">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_diversity"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#RegionalBiodiversityEvaluation"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#edaphon_number -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#edaphon_number -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#edaphon_number">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_diversity"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#edaphon_number">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_diversity"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#RegionalBiodiversityEvaluation"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#SensitiveAndVulnerableArea"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#green -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#green -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#green">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#green">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#haze -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#haze -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#haze">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#haze">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#landscape -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#landscape -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#landscape">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#landscape">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#SensitiveAndVulnerableArea"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#new_species_number -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#new_species_number -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#new_species_number">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_diversity"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#new_species_number">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_diversity"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#RegionalBiodiversityEvaluation"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#noise -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#noise -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#noise">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#noise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#AcousticEnvironmentQuality"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#number_of_historical_sites -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#number_of_historical_sites -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#number_of_historical_sites">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#landscape"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#number_of_historical_sites">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#landscape"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#other_air_pollutions -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#other_air_pollutions -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#other_air_pollutions">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#other_air_pollutions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#pm2.5 -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#pm2.5 -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#pm2.5">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#pm2.5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#AirQuality"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#species_number -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#species_number -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#species_number">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#biological_diversity"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#species_number">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#biological_diversity"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#RegionalBiodiversityEvaluation"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#sulfur_dioxide_emissions -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#sulfur_dioxide_emissions -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#sulfur_dioxide_emissions">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#environment"/>
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#sulfur_dioxide_emissions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#environment"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#AirQuality"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#water -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#water -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#water">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#water">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#ImportantEcologicalFunctionalArea"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#SurfaceWaterQuality"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#wetlands -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#wetlands -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#wetlands">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#wetlands">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#ImportantEcologicalFunctionalArea"/>
     </Class>
     
 
 
-    <!-- http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#woodland -->
+    <!-- http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#woodland -->
 
-    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2017/3/untitled-ontology-10#woodland">
+    <Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#woodland">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#ImportantEcologicalFunctionalArea"/>
     </Class>
     
