@@ -36,8 +36,9 @@
 
 
   var getfigure_url = './Graph';
-  var wd = parent.window.$("#ontKey").text();
+  var wd = window.parent.document.getElementById('ontKey').innerHTML;
   console.log(getfigure_url);
+  console.log(wd);
   var ajax_data = $.ajax({
 	    url: getfigure_url,
 	    data: { 'entity': decodeURI(wd) },
