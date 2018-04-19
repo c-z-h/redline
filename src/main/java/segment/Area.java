@@ -586,7 +586,7 @@ public class Area {
 		for (BoundaryList bList : boundaryLists) {
 			List<Point> list=bList.list;
 			for (int i=0; i<list.size(); i++){
-				for (int j=1; j<samplingHops && j<list.size(); j++)
+				for (int j=1; j<samplingHops && i<list.size(); j++)
 					list.remove(i);
 			}
 		}

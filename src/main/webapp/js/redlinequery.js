@@ -24,7 +24,9 @@ function getBoundary(){
     
     
        
-    point0=new BMap.Point(); 
+    pointPre=new BMap.Point(); 
+    pointNxt=new BMap.Point();
+    pointDst=new BMap.Point();
     $.post("SegmentServlet",
     {
         "xstart":xstart,
@@ -46,7 +48,7 @@ function getBoundary(){
             var i,di;
             if(json.bounds[k].pos=='true'){
                 //外层轮廓，倒序连接
-            	i=points.length-1;
+            	i=points.length;
             	di=-1;
             }
             else{
@@ -56,30 +58,30 @@ function getBoundary(){
             }
             var x,y;
             points[points.length]=points[0];
-            for (var j=0;j<points.length;j++){
-            	point.lat=parseFloat(points[i].latitude);
-            	point.lng=parseFloat(points[i].longitude);
-                //将经纬度转换成屏幕位置
-            	pixel0=map.pointToPixel(point);
+            for (var j=0;j<points.length-1;j++){
+            	pointPre.lat=parseFloat(points[i].latitude);
+            	pointPre.lng=parseFloat(points[i].longitude);
+
             	if (j==0){
-                    point.lat=parseFloat(points[i+di].latitude);
-                    point.lng=parseFloat(points[i+di].longitude);
-                    pixel1=map.pointToPixel(point);
-                    x=(pixel0.x+pixel1.x)/2;
-                    y=(pixel0.y+pixel1.y)/2;
-            		ctx.moveTo(x, y);
-                    pixel0.x=pixel1.x;
-                    pixel0.y=pixel1.y;
+                    pointNxt.lat=parseFloat(points[i+di].latitude);
+                    pointNxt.lng=parseFloat(points[i+di].longitude);
+                    pointDst.lat=(pointPre.lat+pointNxt.lat)/2;
+                    pointDst.lng=(pointPre.lng+pointNxt.lng)/2;
+                    pixelDst=map.pointToPixel(pointDst);
+            		ctx.moveTo(pixelDst.x, pixelDst.y);
+                    pointPre.x=pointNxt.x;
+                    pointPre.y=pointNxt.y;
             	}
             	else{
-                    point.lat=parseFloat(points[i+di].latitude);
-                    point.lng=parseFloat(points[i+di].longitude);
-                    pixel1=map.pointToPixel(point);
-                    x=(pixel0.x+pixel1.x)/2;
-                    y=(pixel0.y+pixel1.y)/2;
-            		ctx.quadraticCurveTo(pixel0.x, pixel0.y, x, y);
-                    pixel0.x=pixel1.x;
-                    pixel0.y=pixel1.y;           		
+                    pointNxt.lat=parseFloat(points[i+di].latitude);
+                    pointNxt.lng=parseFloat(points[i+di].longitude);
+                    pointDst.lat=(pointPre.lat+pointNxt.lat)/2;
+                    pointDst.lng=(pointPre.lng+pointNxt.lng)/2;
+                    pixelDst=map.pointToPixel(pointDst);
+                    pixelCtl=map.pointToPixel(pointPre);
+            		ctx.quadraticCurveTo(pixelCtl.x, pixelCtl.y, pixelDst.x, pixelDst.y);
+                    pointPre.x=pointNxt.x;
+                    pointPre.y=pointNxt.y;           		
             	}
             	i+=di;
             }

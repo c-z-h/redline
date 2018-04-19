@@ -153,6 +153,11 @@ public class AreaTest {
 		return this;
 	}
 
+	public AreaTest testSampling(boolean debug){
+		area.sampling();
+		return this;
+	}
+	
 	public String testToJSON(boolean debug) {
 		return area.toJSON();
 	}
@@ -201,6 +206,7 @@ public class AreaTest {
 //		areaTest.testBoundaryTrack(0, 0, 7, false)
 //				.testRemoveBoundPosMapBFS(0, 0, false)
 		return areaTest.testGetBoundarys(false)
+				.testSampling(false)
 				.testToJSON(true);
 	}
 	
