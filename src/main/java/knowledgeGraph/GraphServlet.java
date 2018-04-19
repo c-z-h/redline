@@ -29,7 +29,8 @@ public class GraphServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String keyword = req.getParameter("entity");
-		if ("".equals(keyword)||keyword == null) keyword = "redline";
+		if ("".equals(keyword) || keyword == null)
+			keyword = "redline";
 		String path=req.getSession().getServletContext().getRealPath("")+"redline.owl";
 		String json = getJson(getOntClass(keyword, path));
 		resp.setContentType("text/html;charset=utf-8");

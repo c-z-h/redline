@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,19 +16,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.RDFReader;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.SimpleSelector;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 
 
@@ -45,7 +37,8 @@ public class KnowledgeServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String keyword = req.getParameter("keyword");
-		if ("".equals(keyword)||keyword == null) keyword = "redline";
+		if ("".equals(keyword) || keyword == null) 
+			keyword = "redline";
 		String path=req.getSession().getServletContext().getRealPath("")+"redline.owl";
 		OntClass ontology = getOntClass(keyword, path);
 		Entity entity = null;
@@ -68,15 +61,34 @@ public class KnowledgeServlet extends HttpServlet{
 		List<Entity> list = new ArrayList<>();
 		if (ontology == null) 
 			return list;
+		Set<OntClass> directSub = new HashSet<>();
+		Set<OntClass> directSuper = new HashSet<>();
+		Iterator<OntClass> itr3 = ontology.listSubClasses(true);
+		Iterator<OntClass> itr4 = ontology.listSuperClasses(true);
+		while (itr3.hasNext()) {
+			OntClass temp = itr3.next();
+			directSub.add(temp);
+		}
+		while (itr4.hasNext()) {
+			OntClass temp = itr4.next();
+			directSuper.add(temp);
+		}
 		Iterator<OntClass> itr1 = ontology.listSubClasses();
 		Iterator<OntClass> itr2 = ontology.listSuperClasses();
 		while (itr1.hasNext()) {
 			OntClass temp = itr1.next();
-			list.add(new Entity(temp.getLocalName(),"<span style='color:gray'>子类</span>",temp.getComment(null)));
+			if (!directSub.contains(temp)) {
+//				list.add(new Entity(temp.getLocalName(),"<span style='color:gray'>子类</span>",temp.getComment(null)));
+			} else {
+				list.add(new Entity(temp.getLocalName(),"<span style='color:gray'>直接子类</span>",temp.getComment(null)));
+			}
 		}
 		while (itr2.hasNext()) {
 			OntClass temp = itr2.next();
-			list.add(new Entity(temp.getLocalName(),"<span style='color:lightgreen'>父类</span>",temp.getComment(null)));
+			if (!directSuper.contains(temp))
+				list.add(new Entity(temp.getLocalName(),"<span style='color:lightgreen'>父类</span>",temp.getComment(null)));
+			else
+				list.add(new Entity(temp.getLocalName(),"<span style='color:lightgreen'>直接父类</span>",temp.getComment(null)));
 		}
 		return list;
 	}
