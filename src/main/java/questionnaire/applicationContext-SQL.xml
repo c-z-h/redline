@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://120.26.128.4:3306/erist_v2?useUnicode=true&amp;characterEncoding=utf8" />
+		<property name="username" value="root" />
+		<property name="password" value="cujlab" />
+	</bean>
+	
+	<bean id="residentDAO" class="questionnaire.resident.ResidentQuestionnaireDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="monitorDAO" class="questionnaire.monitor.MonitorQuestionnaireDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="liteQueryDAO" class="lite.LiteQueryDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="indiQueryDAO" class="indi.IndiQueryDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<import resource="applicationContext-Questionnaire-Expert.xml"/>
+	<bean id="expertDAO" class="questionnaire.expert.ExpertQuestionnaireDAO">
+		<property name="dataSource" ref="dataSource" />
+			<!-- 问题权重 -->
+			<property name="weights">
+				<util:map map-class="java.util.HashMap">
+					<entry key="Q2" value-ref="weight2"/>
+					<entry key="Q3" value-ref="weight3"/>
+					<entry key="Q4" value-ref="weight4"/>
+					<entry key="Q5" value-ref="weight5"/>
+					<entry key="Q6" value-ref="weight6"/>
+					<entry key="Q7" value-ref="weight7"/>
+					<entry key="Q8" value-ref="weight8"/>
+					<entry key="Q9" value-ref="weight9"/>
+					<entry key="Q10" value-ref="weight10"/>
+					<entry key="Q11" value-ref="weight11"/>
+					<entry key="Q12" value-ref="weight12"/>
+					<entry key="Q13" value-ref="weight13"/>
+					<entry key="Q14" value-ref="weight14"/>
+					<entry key="Q15" value-ref="weight15"/>
+					<entry key="Q16" value-ref="weight16"/>
+					<entry key="Q17" value-ref="weight17"/>
+					<entry key="Q18" value-ref="weight18"/>
+					<entry key="Q19" value-ref="weight19"/>
+					<entry key="Q20" value-ref="weight20"/>
+					<entry key="Q21" value-ref="weight21"/>
+					<entry key="Q22" value-ref="weight22"/>
+					<entry key="Q23" value-ref="weight23"/>
+					<entry key="Q24" value-ref="weight24"/>
+					<entry key="Q25" value-ref="weight25"/>
+					<entry key="Q26" value-ref="weight26"/>
+					<entry key="Q27" value-ref="weight27"/>
+					<entry key="Q28" value-ref="weight28"/>
+					<entry key="Q29" value-ref="weight29"/>
+					<entry key="Q30" value-ref="weight30"/>													
+				</util:map>
+			</property>
+	</bean>
+	<bean id="weightingDAO" class="weighting.WeightingDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>

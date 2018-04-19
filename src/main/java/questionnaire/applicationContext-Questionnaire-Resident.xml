@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+	<!-- 各种选项的权重 -->
+	<util:list id="option5" list-class="java.util.ArrayList">
+		<value>0.9</value>
+		<value>0.7</value>
+		<value>0.5</value>
+		<value>0.3</value>
+		<value>0.1</value>
+	</util:list>
+	<util:list id="option4" list-class="java.util.ArrayList">
+		<value>0.8</value>
+		<value>0.6</value>
+		<value>0.4</value>
+		<value>0.2</value>
+	</util:list>
+	<util:list id="option3" list-class="java.util.ArrayList">
+		<value>0.9</value>
+		<value>0.5</value>
+		<value>0.1</value>
+	</util:list>
+	<!-- 各问题的标识、权重及选项类型 -->
+	<bean id="residentQuestion1" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q1"/>
+		<property name="weight" value="0.05"/>
+		<property name="optionWeights" ref="option5"/>
+	</bean>
+	<bean id="residentQuestion2" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q2"/>
+		<property name="weight" value="0.05"/>
+		<property name="optionWeights" ref="option5"/>
+	</bean>
+	<bean id="residentQuestion3" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q3"/>
+		<property name="weight" value="0.15"/>
+		<property name="optionWeights" ref="option5"/>
+	</bean>
+	<bean id="residentQuestion4" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q4"/>
+		<property name="weight" value="0.075"/>
+		<property name="optionWeights" ref="option5"/>
+	</bean>
+	<bean id="residentQuestion5" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q5"/>
+		<property name="weight" value="0.075"/>
+		<property name="optionWeights" ref="option5"/>
+	</bean>
+	<bean id="residentQuestion6" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q6"/>
+		<property name="weight" value="0.1"/>
+		<property name="optionWeights" ref="option5"/>
+	</bean>
+	<bean id="residentQuestion7" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q7"/>
+		<property name="weight" value="0.075"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion8" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q8"/>
+		<property name="weight" value="0.075"/>
+		<property name="optionWeights" ref="option3"/>
+	</bean>
+	<bean id="residentQuestion9" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q9"/>
+		<property name="weight" value="0.045"/>
+		<property name="optionWeights" ref="option3"/>
+	</bean>
+	<bean id="residentQuestion10" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q10"/>
+		<property name="weight" value="0.045"/>
+		<property name="optionWeights" ref="option3"/>
+	</bean>
+	<bean id="residentQuestion11" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q11"/>
+		<property name="weight" value="0.018"/>
+		<property name="optionWeights" ref="option3"/>
+	</bean>
+	<bean id="residentQuestion12" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q12"/>
+		<property name="weight" value="0.024"/>
+		<property name="optionWeights" ref="option3"/>
+	</bean>
+	<bean id="residentQuestion13" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q13"/>
+		<property name="weight" value="0.018"/>
+		<property name="optionWeights" ref="option3"/>
+	</bean>
+	<bean id="residentQuestion14" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q14"/>
+		<property name="weight" value="0.03"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion15" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q15"/>
+		<property name="weight" value="0.02"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion16" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q16"/>
+		<property name="weight" value="0.02"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion17" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q17"/>
+		<property name="weight" value="0.03"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion18" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q18"/>
+		<property name="weight" value="0.018"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion19" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q19"/>
+		<property name="weight" value="0.012"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion20" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q20"/>
+		<property name="weight" value="0.012"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion21" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q21"/>
+		<property name="weight" value="0.018"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion22" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q22"/>
+		<property name="weight" value="0.02"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<bean id="residentQuestion23" class="questionnaire.resident.ResidentQuestion">
+		<property name="question" value="Q23"/>
+		<property name="weight" value="0.02"/>
+		<property name="optionWeights" ref="option4"/>
+	</bean>
+	<!-- 问题列表 -->
+	<bean id="residentQuestionnaire" class="questionnaire.resident.ResidentQuestionnaire">
+		<property name="questions">
+			<list>
+				<ref bean="residentQuestion1"/>
+				<ref bean="residentQuestion2"/>
+				<ref bean="residentQuestion3"/>
+				<ref bean="residentQuestion4"/>
+				<ref bean="residentQuestion5"/>
+				<ref bean="residentQuestion6"/>
+				<ref bean="residentQuestion7"/>
+				<ref bean="residentQuestion8"/>
+				<ref bean="residentQuestion9"/>
+				<ref bean="residentQuestion10"/>
+				<ref bean="residentQuestion11"/>
+				<ref bean="residentQuestion12"/>
+				<ref bean="residentQuestion13"/>
+				<ref bean="residentQuestion14"/>
+				<ref bean="residentQuestion15"/>
+				<ref bean="residentQuestion16"/>
+				<ref bean="residentQuestion17"/>
+				<ref bean="residentQuestion18"/>
+				<ref bean="residentQuestion19"/>
+				<ref bean="residentQuestion20"/>
+				<ref bean="residentQuestion21"/>
+				<ref bean="residentQuestion22"/>
+				<ref bean="residentQuestion23"/>
+			</list>
+		</property>
+	</bean>
+</beans>

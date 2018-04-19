@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/members.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/articlesearch.css" media="all">
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=8XLv1VeBt9bFblxkC0sVGbQ07A81hnX3" type="text/javascript"></script>
+    <title>生态红线</title>
+</head>
+<body>
+<div class="backtrans">
+    <div class="container">
+
+        <!-- header -->
+        <div class="header">
+            <div class="logo">
+                <a href="#"><img src="images/logo2.png" class="img-responsive" alt="" /></a>
+            </div>
+            <div class="header-left">
+                <div class="head-nav">
+                    <span class="menu"> </span>
+                    <ul class="cl-effect-1">
+                        <li><a href="index.html">首页</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li><a href="Members.html" style="padding:0 5px;">团队成员</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li class="active" style="padding:0 5px;"><a href="ArticleSearch.html" style="padding:0 5px;">知识服务</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li><a href="Forum.html" style="padding:0 5px;">论坛</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li><a href="Contact.html"style="padding:0 5px;">联系我们</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <!-- script-for-nav -->
+                <script>
+                    $( "span.menu" ).click(function() {
+                        $( ".head-nav ul" ).slideToggle(400, function() {
+                            // Animation complete.
+                        });
+                    });
+                </script>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <!-- header -->
+
+        <!-- Content -->
+        <div class="cn-db">
+            <div class="Introduction">
+                <h3>
+                    一、知识库介绍
+                </h3>
+                <p style="width:80%; margin: 30px auto; font-size:large; background: #f6f9fa; border: 0.5px #f6f9fa; border-radius: 5px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是基于本体与空间知识挖掘分析等技术构建的生态红线知识库，可用于指标知识和其他类型生态红线知识的推理和应用。本知识库是生态红线可视化表达和智能化应用过程中特征、事件和规则等知识的集合，用以存储和管理使用生态红线知识模型描述的生态红线知识本体实例。可利用支持语义的知识索引和知识检索等技术，面向不同应用和尺度提供生态红线空间知识。
+                </p>
+            </div>
+            <div class="Search">
+                <h3>
+                    二、搜索
+                </h3>
+                <br/>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <input id="searchInput" class="search-input" type="text" placeholder="搜索实体？">
+                    <button class="search-btn btn">搜索</button>
+                </div>
+
+                <!--<section class="cn-db-search">-->
+                    <!--<form action="" method="">-->
+                        <!--<input type="search" placeholder="What are you looking for?">-->
+                        <!--<button>Search</button>-->
+                    <!--</form>-->
+                <!--</section>-->
+            </div>
+        </div>
+        <!-- Content -->
+
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <!--</div>-->
+            <div class="foot-right">
+                <ul>
+                    <li><a href="#"><i class="fb"></i></a></li>
+                    <li><a href="#"><i class="twt"></i></a></li>
+                    <li><a href="#"><i class="in"></i></a></li>
+                    <li><a href="#"><i class="rss"></i></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <i class="line"> </i>
+        <div class="footer-bottom">
+            <div class="foot-left">
+                <div class="foot-nav">
+                    <ul>
+                        <li class="active"><a href="index.jsp">首页</a></li> |
+                        <li><a href="about.html">团队成员</a></li> |
+                        <li><a href="services.html">服务</a></li> |
+                        <li><a href="download.jsp">下载中心</a></li> |
+                        <li><a href="contact.html">联系我们</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-right">
+                <p>@Copyright 武汉大学 资源环境管理与数字技术国际联合实验室</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+<!-- footer -->
+
+</body>
+

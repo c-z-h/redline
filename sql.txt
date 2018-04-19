@@ -1,0 +1,30 @@
+guest表
+id		int 		pk ai
+ip		char(20)	nn
+
+indi表
+id		int		pk ai
+guest		int  		fk guest(id)
+name		char(20)	nn
+parent		int				父指标
+weight		double		nn		占父指标的权重
+
+questionee表
+id		int		pk ai
+name		char(20)	nn
+
+question表
+questionee	int		fk questionee(id)
+question	char(100)	nn	用json字符串存储
+type		char(10)	nn	（填空 单选）
+alpha		char(100)	nn	单选用json字符串存储
+integrable	bool		nn
+
+answer表
+lng		double		nn
+lat		double		nn
+indi 		int 		fk indi(id)
+value		double		nn	经过alpha计算及优化后的值
+
+
+

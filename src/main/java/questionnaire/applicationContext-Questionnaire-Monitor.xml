@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 各问题的标识、权重及A值 -->
+	<bean id="monitorQuestion3" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q3"/>
+		<property name="weight" value="0.05"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion4" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q4"/>
+		<property name="weight" value="0.05"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion5" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q5"/>
+		<property name="weight" value="0.075"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion6" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q6"/>
+		<property name="weight" value="0.075"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion7" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q7"/>
+		<property name="weight" value="0.25"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion8" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q8"/>
+		<property name="weight" value="0.15"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion9" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q9"/>
+		<property name="weight" value="0.09"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion10" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q10"/>
+		<property name="weight" value="0.03"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion11" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q11"/>
+		<property name="weight" value="0.03"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion12" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q12"/>
+		<property name="weight" value="0.03"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion13" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q13"/>
+		<property name="weight" value="0.03"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion14" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q14"/>
+		<property name="weight" value="0.04"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion15" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q15"/>
+		<property name="weight" value="0.018"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion16" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q16"/>
+		<property name="weight" value="0.018"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion17" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q17"/>
+		<property name="weight" value="0.024"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<bean id="monitorQuestion18" class="questionnaire.monitor.MonitorQuestion">
+		<property name="question" value="Q18"/>
+		<property name="weight" value="0.04"/>
+		<property name="alpha" value="1"/>
+	</bean>
+	<!-- 问题列表 -->
+	<bean id="monitorQuestionnaire" class="questionnaire.monitor.MonitorQuestionnaire">
+		<property name="questions">
+			<list>
+				<ref bean="monitorQuestion3"/>
+				<ref bean="monitorQuestion4"/>
+				<ref bean="monitorQuestion5"/>
+				<ref bean="monitorQuestion6"/>
+				<ref bean="monitorQuestion7"/>
+				<ref bean="monitorQuestion8"/>
+				<ref bean="monitorQuestion9"/>
+				<ref bean="monitorQuestion10"/>
+				<ref bean="monitorQuestion11"/>
+				<ref bean="monitorQuestion12"/>
+				<ref bean="monitorQuestion13"/>
+				<ref bean="monitorQuestion14"/>
+				<ref bean="monitorQuestion15"/>
+				<ref bean="monitorQuestion16"/>
+				<ref bean="monitorQuestion17"/>
+				<ref bean="monitorQuestion18"/>
+			</list>
+		</property>
+	</bean>
+</beans>

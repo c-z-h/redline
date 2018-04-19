@@ -1,0 +1,30 @@
+#main-content {
+    padding: 1em 0 1em;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.Lite_Show {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+}
+
+.Lite_show h1 {
+    width: 40%;
+    height: auto;
+}
+
+.Lite_Show .show {
+    width: 100%;
+    height: auto;
+    border-top: #9c9c9c 1px solid;
+    margin: 30px 0;
+    padding: 10px 5px;
+}
+
+.Lite_Show .show p {
+    text-align: justify;
+    text-indent:2em
+}

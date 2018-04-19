@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+		
+	<bean id="eristPoints" class="weighting.EristPoints">
+		<!-- 3种问卷的权重 -->
+		<property name="questionnaireWeights">
+			<util:list list-class="java.util.ArrayList">
+				<!-- expert -->
+				<value>0.5</value>
+				<!-- monitor -->
+				<value>0.3</value>
+				<!-- resident -->
+				<value>0.2</value>
+			</util:list>
+		</property>
+		<!-- 分区阈值 -->
+		<property name="levelWeights">
+			<util:list list-class="java.util.ArrayList">
+				<!-- level 0 -->
+				<value>0.8</value>
+				<!-- level 1 -->
+				<value>0.5</value>
+				<!-- level 2 -->
+			</util:list>
+		</property>
+	</bean>
+</beans>

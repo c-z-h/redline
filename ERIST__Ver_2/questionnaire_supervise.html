@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/ques-style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/baiduMap.css" media="all"/>
+    <!--<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
+    <title>面向监测人员的调查问卷</title>
+
+    <!--baiduMap-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8XLv1VeBt9bFblxkC0sVGbQ07A81hnX3"></script>
+</head>
+<body>
+<div class="backTrans">
+    <div class="header">
+        <h1>面向监测人员的调查问卷</h1>
+    </div>
+
+    <div class="map">
+        <div class="location">
+            <div id="r-result" class="r-result"><input type="text" id="suggestId" placeholder="请输入您的居住地" class="mapInput"/></div>
+            <!--<p id="location" >经纬度</p>-->
+            <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+        </div>
+        <div id="l-map" class="l-map"></div>
+    </div>
+
+    <div class="container">
+        <div class="ques">
+            <form class="form-style">
+                <div class="title">
+                    <label class="labelStyle" style="display:block; width: 100%; color: #a9a9a9; margin-bottom: 1em;">为便于统计，在正式开始问卷之前，请您填写以下内容。</label>
+                </div>
+                <!--Q1-->
+                <div class="title">
+                    <label class="labelStyle"><span style="color: #696969;">&middot;</span> 目前监测范围的中心经纬度是多少?</label>
+                    <textarea class="text" rows="1"></textarea>
+                </div>
+
+                <!--Q2-->
+                <div class="title">
+                    <label class="labelStyle"><span style="color: #696969;">&middot;</span> 目前的监测范围面积有多大?</label>
+                    <input class="text" />
+                </div>
+
+                <div class="title">
+                    <label class="labelStyle" style="display:block; width: 100%; color: #a9a9a9; ">您可以在这里添加一定的描述性文字，来表明监测范围的地理情况:</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q1-->
+                <div class="title">
+                    <label class="labelStyle">1. 监测范围内自然资源的分布面积有多大?</label>
+                    <input class="text" />
+                </div>
+
+
+                <!--Q2-->
+                <div class="title">
+                    <label class="labelStyle">2. 监测范围内自然资源的分布面积占比有多大?</label>
+                    <input class="text" />
+                </div>
+
+
+                <!--Q3-->
+                <div class="title">
+                    <label class="labelStyle">3. 监测范围内各生物资源类型有效总量为多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q4-->
+                <div class="title">
+                    <label class="labelStyle">4. 监测范围内各生物资源类型可利用生物量为多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q5-->
+                <div class="title">
+                    <label class="labelStyle">5. 监测范围内的生物价值总量为多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q6-->
+                <div class="title">
+                    <label class="labelStyle">6. 监测范围内的物种丰富度是多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q7-->
+                <div class="title">
+                    <label class="labelStyle">7. 监测范围内的景观变化率是多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q8-->
+                <div class="title">
+                    <label class="labelStyle">8. 监测范围内的景观指数是多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q9-->
+                <div class="title">
+                    <label class="labelStyle">9. 监测范围内的人文幸福指数是多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q10-->
+                <div class="title">
+                    <label class="labelStyle">10. 监测范围内的区域在最近三年内发生的最严重的自然灾害的受灾面积有多大?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q11-->
+                <div class="title">
+                    <label class="labelStyle">11. 监测范围内的区域在最近三年内发生自然灾害的总经济损失有多大?</label>
+                    <input class="text" />
+                </div>
+
+
+                <!--Q12-->
+                <div class="title">
+                    <label class="labelStyle">12. 监测范围内的区域在最近三年内发生人为灾害的受灾频度是多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--Q13-->
+                <div class="title">
+                    <label class="labelStyle">13. 监测范围内的生态承载力是多少?</label>
+                    <input class="text" />
+                </div>
+
+                <!--提交-->
+                <input type="button" value="提交" name="submit" onclick="quesSubmit()" class="submit"/>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>@Copyright 武汉大学 资源环境管理与数字技术国际联合实验室</p>
+        <p class="footer_belong">Produced by YZN_DC_CZH_XY Group</p>
+    </div>
+</div>
+<script>
+    // 百度地图API功能
+    function G(id) {
+        return document.getElementById(id);
+    }
+
+    var map = new BMap.Map("l-map");
+    map.centerAndZoom(new BMap.Point(110.4921680000, 31.6274910000), 10);                 // 初始化地图，设置中心点坐标和地图级别
+    //开启滚轮缩放地图
+    map.enableScrollWheelZoom();
+
+
+    /*功能：搜索框搜索目的地*/
+    var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+        {"input" : "suggestId"
+            ,"location" : map
+        });
+
+    ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        G("searchResultPanel").innerHTML = str;
+    });
+
+    var myValue;
+    function onconfirm(e) {
+
+    }
+    ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+        var _value = e.item.value;
+        myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+        setPlace();
+    });
+
+    function setPlace(){
+        map.clearOverlays();    //清除地图上所有覆盖物
+        function myFun(){
+            var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+            map.centerAndZoom(pp, 18);
+            map.addOverlay(new BMap.Marker(pp));    //添加标注
+            //动态地在<p>标签中显示经纬度坐标
+            //G("location").firstChild.nodeValue=pp.lng+','+pp.lat;
+
+            //显示文本信息窗格
+            var opts = {
+                width : 100,     // 信息窗口宽度
+                height: 50,     // 信息窗口高度
+                title : "您选定的位置坐标" , // 信息窗口标题
+                enableMessage:true,//设置允许信息窗发送短息
+                message:"23333333"
+            };
+            var infoWindow = new BMap.InfoWindow(pp.lng+','+pp.lat, opts);  // 创建信息窗口对象
+            map.openInfoWindow(infoWindow,pp); //开启信息窗口
+            var location=pp.lng+','+pp.lat;
+            return location;
+        }
+        var local = new BMap.LocalSearch(map, { //智能搜索
+            onSearchComplete: myFun
+        });
+        local.search(myValue);
+    }
+
+    /*功能：鼠标点击地图选择目的地*/
+    //进行浏览器定位
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function(r){
+        // 定位成功事件
+        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+            //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            point = new BMap.Point(r.point.lng, +r.point.lat);
+        }
+    },{enableHighAccuracy: true})
+    //addEventListener--添加事件监听函数
+    //click--
+    function showPoint(e) {
+        map.clearOverlays();//清除地图覆盖物
+        var marker = new BMap.Marker(e.point);  // 创建标注
+        map.addOverlay(marker);              // 将标注添加到地图中
+        //动态地在<p>标签中显示经纬度坐标
+        //G("location").firstChild.nodeValue=e.point.lng+','+e.point.lat;
+
+        //显示文本信息窗格
+        var opts = {
+            width : 100,     // 信息窗口宽度
+            height: 50,     // 信息窗口高度
+            title : "您选定的位置坐标" , // 信息窗口标题
+            enableMessage:true,//设置允许信息窗发送短息
+            message:"23333333"
+        };
+        var infoWindow = new BMap.InfoWindow(e.point.lng+','+e.point.lat, opts);  // 创建信息窗口对象
+        map.openInfoWindow(infoWindow,e.point); //开启信息窗口
+
+        var location=e.point.lng+','+e.point.lat;
+        return location;
+    }
+
+    map.addEventListener("click",showPoint);
+
+    // 编写自定义函数,创建标注
+    function addMarker(point){
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+    }
+</script>
+
+</body>
+</html>

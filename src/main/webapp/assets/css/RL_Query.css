@@ -1,0 +1,13 @@
+.RL_Query {
+    width: 100%;
+    height: auto;
+}
+
+.RL_Query h1 {
+    margin: 10% 0;
+}
+.Main_Query {
+    width: 90%;
+    height: auto;
+    margin: 10% auto 20%;
+}

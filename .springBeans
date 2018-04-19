@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.4.201703310634-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/java/test/Message-Datasource.xml</config>
+		<config>src/main/java/questionnaire/applicationContext-SQL.xml</config>
+		<config>src/main/java/questionnaire/applicationContext-Questionnaire-Expert.xml</config>
+		<config>src/main/java/questionnaire/applicationContext-Questionnaire-Monitor.xml</config>
+		<config>src/main/java/questionnaire/applicationContext-Questionnaire-Resident.xml</config>
+		<config>src/main/java/weighting/applicationContext-Weighting.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

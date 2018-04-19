@@ -1,0 +1,93 @@
+.indicator {
+    width: 100%;
+    height: auto;
+    margin: 5% 0 25% 0;
+}
+
+.indicator h1 {
+    width: 100%;
+    text-align: center;
+    margin: 10% 0;
+}
+
+.indicator .Main_Search {
+    width: 100%;
+    height: auto;
+    margin: 10% 0;
+}
+
+.Main_Search .query_select {
+    width: 15%;
+    height: 34px;
+    float: left;
+    margin-right: 2%;
+    padding-left: 8px;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+.Main_Search .Search {
+    width: 73%;
+    height: auto;
+    float: left;
+}
+/*.indicator .way_choose {*/
+    /*width: 100%;*/
+    /*height: 25px;*/
+    /*margin-top: 13%;*/
+    /*margin-bottom: -1%;*/
+/*}*/
+
+/*.indicator .indi_choose{*/
+    /*display: block;*/
+    /*width: 9em;*/
+    /*height: 1em;*/
+    /*padding: 0;*/
+    /*float: left;*/
+    /*color: white;*/
+    /*font-size: 18px;*/
+    /*line-height: 18px;*/
+/*}*/
+
+/*.indicator .way {*/
+    /*border-radius: 3px;*/
+    /*width: 8em;*/
+    /*height: auto;*/
+    /*margin-left: 5px;*/
+    /*float: left;*/
+    /*color: white;*/
+    /*font-size: 16px;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*.indicator .way2 {*/
+    /*border-radius: 3px;*/
+    /*width: 5em;*/
+    /*height: auto;*/
+    /*margin-left: 5px;*/
+    /*float: left;*/
+    /*color: white;*/
+    /*font-size: 16px;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*.indicator .way:focus {*/
+     /*background-color: #1d7db1;*/
+ /*}*/
+
+/*.indicator .way2:focus {*/
+    /*background-color: #1d7db1;*/
+/*}*/
+
+/*.indicator .input-group {*/
+    /*margin: 0;*/
+/*}*/
+
+.indicator .input-group-addon {
+}
+
+.indicator .indicator_history {
+    width: 100%;
+    height: auto;
+}

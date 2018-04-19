@@ -1,0 +1,149 @@
+#main-content {
+    padding: 1em 0 1em;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.indicator {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 0 0 10%;
+    padding: 0 20px;
+}
+
+.indicator h1 {
+    width: 100%;
+    text-align: center;
+    margin: 10% 0;
+}
+
+.indicator .Main_Search {
+    width: 100%;
+    height: auto;
+    margin: 10% 0;
+}
+
+.Main_Search .query_select {
+    width: 22%;
+    height: 34px;
+    float: left;
+    margin-right: 2%;
+    padding-left: 8px;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+.Main_Search .Search {
+    width: 70%;
+    height: auto;
+    float: left;
+}
+
+/*.indicator .way_choose {*/
+    /*width: 100%;*/
+    /*height: 25px;*/
+    /*margin-top: 13%;*/
+    /*margin-bottom: -1%;*/
+/*}*/
+
+/*.indicator .indi_choose{*/
+    /*display: block;*/
+    /*width: 9em;*/
+    /*height: 1em;*/
+    /*padding: 0;*/
+    /*float: left;*/
+    /*color: white;*/
+    /*font-size: 18px;*/
+    /*line-height: 18px;*/
+/*}*/
+
+/*.indicator .way {*/
+    /*border-radius: 3px;*/
+    /*width: 8em;*/
+    /*height: auto;*/
+    /*margin-left: 5px;*/
+    /*float: left;*/
+    /*color: white;*/
+    /*font-size: 16px;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*.indicator .way2 {*/
+    /*border-radius: 3px;*/
+    /*width: 5em;*/
+    /*height: auto;*/
+    /*margin-left: 5px;*/
+    /*float: left;*/
+    /*color: white;*/
+    /*font-size: 16px;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*.indicator .way:focus {*/
+    /*background-color: #1d7db1;*/
+/*}*/
+
+/*.indicator .way2:focus {*/
+    /*background-color: #1d7db1;*/
+/*}*/
+
+
+.indicator .input-group-addon {
+    cursor:pointer;
+}
+
+.indicator .indicator_history {
+    width: 100%;
+    height: auto;
+}
+
+
+/*----------------------indicator_result-------------------------*/
+
+.indicator_result {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 0 0 10%;
+    padding: 0 20px;
+    border-left: 1px #9c9c9c solid;
+}
+
+.query_result {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border: 1px whitesmoke solid;
+}
+
+.query_result span.title {
+    display: block;
+    width: 5.5em;
+    height: 1em;
+    position: relative;
+    top: -0.7em;
+    left: 2em;
+    text-align: center;
+    color: white;
+    background: #494A5F;
+}
+
+.query_result .result {
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+    padding: 5px 8px;
+    background: white;
+    border-radius: 3px;
+    text-align: justify;
+    color: #3755ad;
+}

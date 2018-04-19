@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 问题权重 -->
+	<bean id="weight2" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight3" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight4" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight5" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight6" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight7" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight8" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight9" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight10" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight11" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight12" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight13" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight14" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight15" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight16" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight17" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight18" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight19" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight20" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight21" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight22" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight23" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight24" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight25" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight26" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight27" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight28" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight29" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<bean id="weight30" class="questionnaire.expert.Answers">
+		<property name="weight" value="0.05"/>
+	</bean>
+	<!-- M1资源生态学 -->
+	<bean id="expertQuestion2" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q2"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M1"/>
+	</bean>
+	<bean id="expertQuestion3" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q3"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M1"/>
+	</bean>
+	<bean id="expertQuestion4" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q4"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M1"/>
+	</bean>
+	<bean id="expertQuestion5" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q5"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M1"/>
+	</bean>
+	<bean id="expertQuestion6" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q6"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M1"/>
+	</bean>
+	<bean id="expertQuestion7" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q7"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M1"/>
+	</bean>
+	<!-- M2生态经济学 -->
+	<bean id="expertQuestion8" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q8"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M2"/>
+	</bean>
+	<bean id="expertQuestion9" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q9"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M2"/>
+	</bean>
+	<bean id="expertQuestion10" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q10"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M2"/>
+	</bean>
+	<!-- M3保护生态学 -->
+	<bean id="expertQuestion11" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q11"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M3"/>
+	</bean>
+	<bean id="expertQuestion12" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q12"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M3"/>
+	</bean>
+	<bean id="expertQuestion13" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q13"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M3"/>
+	</bean>
+	<!-- M4农业生态学 -->
+	<bean id="expertQuestion14" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q14"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M4"/>
+	</bean>
+	<bean id="expertQuestion15" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q15"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M4"/>
+	</bean>
+	<!-- M5林学 -->
+	<bean id="expertQuestion16" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q16"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M5"/>
+	</bean>
+	<bean id="expertQuestion17" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q17"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M5"/>
+	</bean>
+	<bean id="expertQuestion18" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q18"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M5"/>
+	</bean>
+	<!-- M6灾害学 -->
+	<bean id="expertQuestion19" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q19"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion20" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q20"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion21" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q21"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion22" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q22"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion23" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q23"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion24" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q24"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion25" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q25"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<bean id="expertQuestion26" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q26"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M6"/>
+	</bean>
+	<!-- M7环境科学 -->
+	<bean id="expertQuestion27" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q27"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M7"/>
+	</bean>
+	<bean id="expertQuestion28" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q28"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M7"/>
+	</bean>
+	<bean id="expertQuestion29" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q29"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M7"/>
+	</bean>
+	<bean id="expertQuestion30" class="questionnaire.expert.ExpertQuestion">
+		<property name="question" value="Q30"/>
+		<property name="alpha" value="1"/>
+		<property name="major" value="M7"/>
+	</bean>
+	<!-- 问题列表 -->
+	<bean id="expertQuestionnaire" class="questionnaire.expert.ExpertQuestionnaire">
+		<property name="questions">
+			<list>
+				<ref bean="expertQuestion2"/>
+				<ref bean="expertQuestion3"/>
+				<ref bean="expertQuestion4"/>
+				<ref bean="expertQuestion5"/>
+				<ref bean="expertQuestion6"/>
+				<ref bean="expertQuestion7"/>
+				<ref bean="expertQuestion8"/>
+				<ref bean="expertQuestion9"/>
+				<ref bean="expertQuestion10"/>
+				<ref bean="expertQuestion11"/>
+				<ref bean="expertQuestion12"/>
+				<ref bean="expertQuestion13"/>
+				<ref bean="expertQuestion14"/>
+				<ref bean="expertQuestion15"/>
+				<ref bean="expertQuestion16"/>
+				<ref bean="expertQuestion17"/>
+				<ref bean="expertQuestion18"/>
+				<ref bean="expertQuestion19"/>
+				<ref bean="expertQuestion20"/>
+				<ref bean="expertQuestion21"/>
+				<ref bean="expertQuestion22"/>
+				<ref bean="expertQuestion23"/>
+				<ref bean="expertQuestion24"/>
+				<ref bean="expertQuestion25"/>
+				<ref bean="expertQuestion26"/>
+				<ref bean="expertQuestion27"/>
+				<ref bean="expertQuestion28"/>
+				<ref bean="expertQuestion29"/>
+				<ref bean="expertQuestion30"/>
+			</list>
+		</property>
+	</bean>
+</beans>

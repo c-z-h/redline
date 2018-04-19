@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/ques-style.css" media="all">
+    <link rel="stylesheet" href="css/jquery-labelauty.css">
+    <link rel="stylesheet" type="text/css" href="css/baiduMap.css" media="all"/>
+    <title>面向居民的调查问卷</title>
+    <style>
+        ul { list-style-type: none;}
+        li { display: inline-block;}
+        li { margin: 10px 0;}
+        input.labelauty + label { font: 0.8em "Microsoft Yahei";}
+    </style>
+
+    <!--baiduMap-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8XLv1VeBt9bFblxkC0sVGbQ07A81hnX3"></script>
+</head>
+<body>
+<div class="backTrans">
+
+    <div class="header">
+        <h1>面向居民的调查问卷</h1>
+    </div>
+
+    <div class="map">
+        <div class="location">
+            <div id="r-result" class="r-result"><input type="text" id="suggestId" placeholder="请输入您的居住地" class="mapInput"/></div>
+            <!--<p id="location" >经纬度</p>-->
+            <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+        </div>
+        <div id="l-map" class="l-map"></div>
+    </div>
+
+    <!--问卷主题内容：-->
+    <div class="container">
+        <div class="ques">
+            <form class="form-style" action="" method="get" id="q1">
+                <!--Q1-->
+                <div class="title title_margin">
+                    <label class="labelStyle">1. 您生活的环境周围自然资源的分布面积(包括但不限于森林、草地、农田、河流等有动植 物或水源存在的自然区域)是否广泛?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="分布面积极大"></li>
+                        <li><input type="radio" name="radio" data-labelauty="分布面积很大"></li>
+                        <li><input type="radio" name="radio" data-labelauty="分布面积比较大"></li>
+                        <li><input type="radio" name="radio" data-labelauty="分布面积比较小"></li>
+                        <li><input type="radio" name="radio" data-labelauty="分布面积非常小"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q2-->
+            <form class="form-style" action="" method="get" id="q2">
+                <div class="title  title_margin">
+                    <label class="labelStyle">2. 这些自然资源在您生活的环境周围是否容易看到?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="几乎看不到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="大部分可见"></li>
+                        <li><input type="radio" name="radio" data-labelauty="部分可见"></li>
+                        <li><input type="radio" name="radio" data-labelauty="不容易看到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="几乎看不到"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q3-->
+            <form class="form-style" action="" method="get" id="q3">
+                <div class="title_long_ans">
+                    <label class="labelStyle">3. 您生活的环境周围目前具有活性(包括但不限于在一年内有生长、凋落等过程的森林， 在一年内有耕种活动的农田，在一年内有鱼、虾、水草等动物和植物存在的河、湖等)的 自然资源是否丰富?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="自然资源极其丰富(比如森林极其茂密，农田产量极高，鱼虾产量极高)"></li>
+                        <li><input type="radio" name="radio" data-labelauty="自然资源非常丰富(比如森林非常茂密，农田产量很高，鱼虾产量很高)"></li>
+                        <li><input type="radio" name="radio" data-labelauty="自然资源比较丰富(比如森林比较茂密，农田产量较高，鱼虾产量较高)"></li>
+                        <li><input type="radio" name="radio" data-labelauty="自然资源比较稀少(比如森林比较稀疏，农田产量较低，鱼虾产量较低)"></li>
+                        <li><input type="radio" name="radio" data-labelauty="自然资源非常稀少(比如几乎没有森林，农田产量很低，鱼虾产量很低)"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q4-->
+            <form class="form-style" action="" method="get" id="q4">
+
+                <div class="title_long_ans">
+                    <label class="labelStyle">4. 您生活的环境空气是否清新?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="极其清新，类似于大自然的感觉"></li>
+                        <li><input type="radio" name="radio" data-labelauty="非常清新，类似于雨后的空气情况"></li>
+                        <li><input type="radio" name="radio" data-labelauty="比较清新，没有明显的扬尘"></li>
+                        <li><input type="radio" name="radio" data-labelauty="不够清新，有一定的扬尘"></li>
+                        <li><input type="radio" name="radio" data-labelauty="非常糟糕，呼吸这样的空气经常会感觉到不舒服"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q5-->
+            <form class="form-style" action="" method="get" id="q5">
+                <div class="title  title_margin">
+                    <label class="labelStyle">5. 在您生活的环境周围，雾霾天气是否经常出现?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="几乎从未出现过"></li>
+                        <li><input type="radio" name="radio" data-labelauty="很少出现"></li>
+                        <li><input type="radio" name="radio" data-labelauty="较少出现"></li>
+                        <li><input type="radio" name="radio" data-labelauty="较多出现"></li>
+                        <li><input type="radio" name="radio" data-labelauty="经常出现"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q6-->
+            <form class="form-style" action="" method="get" id="q6">
+                <div class="title  title_margin">
+                    <label class="labelStyle">6. 在您生活的环境周围，(在排除人为清扫的情况下)是否经常会看到大量的枯枝、枯叶的 堆积?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="从未看到过"></li>
+                        <li><input type="radio" name="radio" data-labelauty="很少看到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="较少看到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="较多的时候会看到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="经常看到"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q7-->
+            <form class="form-style" action="" method="get" id="q7">
+                <div class="title__4">
+                    <label class="labelStyle">7. 在您生活的环境周围，是否有不同种类的植物或者(除畜养的家禽、家畜和宠物之外的) 动物存在?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="种类极其多"></li>
+                        <li><input type="radio" name="radio" data-labelauty="种类比较多"></li>
+                        <li><input type="radio" name="radio" data-labelauty="种类比较少"></li>
+                        <li><input type="radio" name="radio" data-labelauty="种类极其少"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q8-->
+            <form class="form-style" action="" method="get" id="q8">
+                <div class="title_long_ans">
+                    <label class="labelStyle">8. 这些植物、动物的种类在最近一段时间有没有非常大的变化(比如非常快地增加或者减 少)?</label><br>
+                    <ul id="question8">
+                        <li><input type="radio" name="radio" data-labelauty="没有非常大的变化，基本没有发现某种植物或者动物有消失的迹象"></li>
+                        <li><input type="radio" name="radio" data-labelauty="正在比较快地减少，经常会发现某种植物或者动物从我生活的环境中消失"></li>
+                        <li><input type="radio" name="radio" data-labelauty="正在极其快地减少，我身边的植物或者动物都在渐渐消失"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q9-->
+            <form class="form-style" action="" method="get" id="q9">
+                <div class="title_long_ans">
+                    <label class="labelStyle">9. 在您生活的环境周围，植物(包括农作物和人为种植的景观植物)在四季内的状态如何?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="状态良好，基本符合正常情况"></li>
+                        <li><input type="radio" name="radio" data-labelauty="状态一般，生长并不算健康"></li>
+                        <li><input type="radio" name="radio" data-labelauty="状态很差，大多数时候处于枯萎或死亡状态"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q10-->
+            <form class="form-style" action="" method="get" id="q10">
+                <div class="title__3">
+                    <label class="labelStyle">10. 这些植物是否有明显的生长、枯萎等过程?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="有明显的过程"></li>
+                        <li><input type="radio" name="radio" data-labelauty="不够明显"></li>
+                        <li><input type="radio" name="radio" data-labelauty="完全看不到"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q11-->
+            <form class="form-style" action="" method="get" id="q11">
+                <div class="title__3">
+                    <label class="labelStyle">11. 在您生活的环境周围，是否有历史遗迹或者自然景观存在?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="有很多"></li>
+                        <li><input type="radio" name="radio" data-labelauty="较少"></li>
+                        <li><input type="radio" name="radio" data-labelauty="几乎没有"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q12-->
+            <form class="form-style" action="" method="get" id="q12">
+                <div class="title__3">
+                    <label class="labelStyle">12. 这些历史遗迹或者自然景观的分布情况如何?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="分布比较密集"></li>
+                        <li><input type="radio" name="radio" data-labelauty="分布比较零碎"></li>
+                        <li><input type="radio" name="radio" data-labelauty="分布十分零碎，几乎不可见"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q13-->
+            <form class="form-style" action="" method="get" id="q13">
+                <div class="title__3">
+                    <label class="labelStyle">13. 生活在这样的环境里，您的幸福感如何?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="我感觉比较幸福"></li>
+                        <li><input type="radio" name="radio" data-labelauty="我感觉不是很幸福"></li>
+                        <li><input type="radio" name="radio" data-labelauty="我感觉非常地不幸福"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q14-->
+            <form class="form-style" action="" method="get" id="q14">
+                <div class="title_long_ans">
+                    <label class="labelStyle">14. 在您生活的环境周围，最近两次自然灾害(包含但不限于山洪暴发、地震、泥石流、火 山爆发、天然山火、虫灾、热岛灾害等非人为直接造成的灾害)的时间间隔大约是多久?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔极大，超过了一年"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔较大，超过了半年"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔较小，不到三个月"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔很小，不到一个月"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q15-->
+            <form class="form-style" action="" method="get" id="q15">
+                <div class="title__4">
+                    <label class="labelStyle">15. 在您生活的环境周围，近三年内发生自然灾害的时间有多少?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="没有发生过"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间较少"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间较多"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间极多，占到了全年的大部分时间"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q16-->
+            <form class="form-style" action="" method="get" id="q16">
+                <div class="title_long_ans">
+                    <label class="labelStyle">16. 最近三年内是否发生了十分严重的自然灾害?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="没有发生"></li>
+                        <li><input type="radio" name="radio" data-labelauty="灾害不是很严重，没有造成大规模的人员伤亡和财产损失"></li>
+                        <li><input type="radio" name="radio" data-labelauty="发生了较为严重的自然灾害，造成了一定规模的人员伤亡和财产损失"></li>
+                        <li><input type="radio" name="radio" data-labelauty="发生了极为严重的自然灾害，造成了大规模的人员伤亡和财产损失"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q17-->
+            <form class="form-style" action="" method="get" id="q17">
+                <div class="title_long_ans">
+                    <label class="labelStyle">17. 最近发生的最严重的自然灾害范围如何?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="范围极小，几乎可以忽略"></li>
+                        <li><input type="radio" name="radio" data-labelauty="范围较小，没有影响到太多居民的生产生活"></li>
+                        <li><input type="radio" name="radio" data-labelauty="范围较大，影响到了不少居民的生产生活"></li>
+                        <li><input type="radio" name="radio" data-labelauty="范围极大，影响到了大部分居民的正常生产生活"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q18-->
+            <form class="form-style" action="" method="get" id="q18">
+                <div class="title_long_ans">
+                    <label class="labelStyle">18. 在您生活的环境周围，最近两次人为灾害(不仅包括人为火灾、人为破坏，也包括人为 产生的噪音污染、空气污染、光污染等灾害，比如建设机场产生的明显噪音污染、建立高 楼产生的明显的光污染、建立工厂产生的明显的空气污染等)的时间间隔大约是多久?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔极大，超过了一年"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔较大，超过了半年"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔较小，不到三个月"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间间隔很小，不到一个月"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q19-->
+            <form class="form-style" action="" method="get" id="q19">
+                <div class="title__4">
+                    <label class="labelStyle">19. 在您生活的环境周围，近三年内发生人为灾害的时间有多少?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="没有发生过"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间较少"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间较多"></li>
+                        <li><input type="radio" name="radio" data-labelauty="时间极多，占到了全年的大部分时间"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q20-->
+            <form class="form-style" action="" method="get" id="q20">
+                <div class="title_long_ans">
+                    <label class="labelStyle">20. 最近三年内是否发生了十分严重的人为灾害?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="没有发生"></li>
+                        <li><input type="radio" name="radio" data-labelauty="灾害不是很严重，没有造成大规模的人员伤亡和财产损失"></li>
+                        <li><input type="radio" name="radio" data-labelauty="发生了较为严重的人为灾害，造成了一定规模的人员伤亡和财产损失"></li>
+                        <li><input type="radio" name="radio" data-labelauty="发生了极为严重的人为灾害，造成了大规模的人员伤亡和财产损失"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q21-->
+            <form class="form-style" action="" method="get" id="q21">
+                <div class="title_long_ans">
+                    <label class="labelStyle">21. 最近发生的最严重的人为灾害范围如何?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="范围极小，几乎可以忽略"></li>
+                        <li><input type="radio" name="radio" data-labelauty="范围较小，没有影响到太多居民的生产生活"></li>
+                        <li><input type="radio" name="radio" data-labelauty="范围较大，影响到了不少居民的生产生活"></li>
+                        <li><input type="radio" name="radio" data-labelauty="范围极大，影响到了大部分居民的正常生产生活"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q22-->
+            <form class="form-style" action="" method="get" id="q22">
+                <div class="title_long_ans">
+                    <label class="labelStyle">22. 在您看来，您所生活的环境在近年来是否舒适(或者糟糕)了?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="一直非常舒适"></li>
+                        <li><input type="radio" name="radio" data-labelauty="环境在少数时间会变得比较糟糕"></li>
+                        <li><input type="radio" name="radio" data-labelauty="环境在多数时间是比较糟糕的"></li>
+                        <li><input type="radio" name="radio" data-labelauty="一直非常糟糕"></li>
+                    </ul>
+                </div>
+            </form>
+
+            <!--Q23-->
+            <form class="form-style" action="" method="get" id="q23">
+                <div class="title_long_ans">
+                    <label class="labelStyle">23. 您是否会感觉到，这种环境变化正在威胁到您和家人的健康?</label><br>
+                    <ul>
+                        <li><input type="radio" name="radio" data-labelauty="完全不会感觉到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="经常会感觉到"></li>
+                        <li><input type="radio" name="radio" data-labelauty="环境在少数时间会变得比较糟糕，这个时候会感觉到我和家人的健康正受到一定程度的威胁"></li>
+                        <li><input type="radio" name="radio" data-labelauty="我感觉到我和家人的健康正受到极大的威胁"></li>
+                    </ul>
+                </div>
+            </form>
+            <input type="button" value="提交" name="submit" onclick="quesSubmit()" class="submit"/>
+        </div>
+    </div>
+    <div class="footer">
+        <p>@Copyright 武汉大学 资源环境管理与数字技术国际联合实验室</p>
+        <p class="footer_belong">Produced by YZN_DC_CZH_XY Group</p>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/jquery-labelauty.js"></script>
+<script>
+    $(function(){
+        $(':input').labelauty();
+    });
+
+    function quesSubmit() {
+        var q1 = document.getElementById("q1");
+        q1.action = "";
+        q1.submit();
+        var q2 = document.getElementById("q2");
+        q2.action = "";
+        q2.submit();
+        var q3 = document.getElementById("q3");
+        q3.action = "";
+        q3.submit();
+        var q4 = document.getElementById("q4");
+        q4.action = "";
+        q4.submit();
+        var q5 = document.getElementById("q5");
+        q5.action = "";
+        q5.submit();
+        var q6 = document.getElementById("q6");
+        q6.action = "";
+        q6.submit();
+        var q7 = document.getElementById("q7");
+        q7.action = "";
+        q7.submit();
+        var q8 = document.getElementById("q8");
+        q8.action = "";
+        q8.submit();
+        var q9 = document.getElementById("q9");
+        q9.action = "";
+        q9.submit();
+        var q10 = document.getElementById("q10");
+        q10.action = "";
+        q10.submit();
+        var q11 = document.getElementById("q11");
+        q11.action = "";
+        q11.submit();
+        var q12 = document.getElementById("q12");
+        q12.action = "";
+        q12.submit();
+        var q13 = document.getElementById("q13");
+        q13.action = "";
+        q13.submit();
+        var q14 = document.getElementById("q14");
+        q14.action = "";
+        q14.submit();
+        var q15 = document.getElementById("q15");
+        q15.action = "";
+        q15.submit();
+        var q16 = document.getElementById("q16");
+        q16.action = "";
+        q16.submit();
+        var q17 = document.getElementById("q17");
+        q17.action = "";
+        q17.submit();
+        var q18 = document.getElementById("q18");
+        q18.action = "";
+        q18.submit();
+        var q19 = document.getElementById("q19");
+        q19.action = "";
+        q19.submit();
+        var q20 = document.getElementById("q20");
+        q20.action = "";
+        q20.submit();
+        var q21 = document.getElementById("q21");
+        q21.action = "";
+        q21.submit();
+        var q22 = document.getElementById("q22");
+        q22.action = "";
+        q22.submit();
+        var q23 = document.getElementById("q23");
+        q23.action = "";
+        q23.submit();
+    }
+
+
+    // 百度地图API功能
+    function G(id) {
+        return document.getElementById(id);
+    }
+
+    var map = new BMap.Map("l-map");
+    map.centerAndZoom(new BMap.Point(110.4921680000, 31.6274910000), 10);                 // 初始化地图，设置中心点坐标和地图级别
+    //开启滚轮缩放地图
+    map.enableScrollWheelZoom();
+
+
+    /*功能：搜索框搜索目的地*/
+    var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+        {"input" : "suggestId"
+            ,"location" : map
+        });
+
+    ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        G("searchResultPanel").innerHTML = str;
+    });
+
+    var myValue;
+    function onconfirm(e) {
+
+    }
+    ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+        var _value = e.item.value;
+        myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+        setPlace();
+    });
+
+    function setPlace(){
+        map.clearOverlays();    //清除地图上所有覆盖物
+        function myFun(){
+            var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+            map.centerAndZoom(pp, 18);
+            map.addOverlay(new BMap.Marker(pp));    //添加标注
+            //动态地在<p>标签中显示经纬度坐标
+            //G("location").firstChild.nodeValue=pp.lng+','+pp.lat;
+
+            //显示文本信息窗格
+            var opts = {
+                width : 100,     // 信息窗口宽度
+                height: 50,     // 信息窗口高度
+                title : "您选定的位置坐标" , // 信息窗口标题
+                enableMessage:true,//设置允许信息窗发送短息
+                message:"23333333"
+            };
+            var infoWindow = new BMap.InfoWindow(pp.lng+','+pp.lat, opts);  // 创建信息窗口对象
+            map.openInfoWindow(infoWindow,pp); //开启信息窗口
+            var location=pp.lng+','+pp.lat;
+            return location;
+        }
+        var local = new BMap.LocalSearch(map, { //智能搜索
+            onSearchComplete: myFun
+        });
+        local.search(myValue);
+    }
+
+    /*功能：鼠标点击地图选择目的地*/
+    //进行浏览器定位
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function(r){
+        // 定位成功事件
+        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+            //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            point = new BMap.Point(r.point.lng, +r.point.lat);
+        }
+    },{enableHighAccuracy: true})
+    //addEventListener--添加事件监听函数
+    //click--
+    function showPoint(e) {
+        map.clearOverlays();//清除地图覆盖物
+        var marker = new BMap.Marker(e.point);  // 创建标注
+        map.addOverlay(marker);              // 将标注添加到地图中
+        //动态地在<p>标签中显示经纬度坐标
+        //G("location").firstChild.nodeValue=e.point.lng+','+e.point.lat;
+
+        //显示文本信息窗格
+        var opts = {
+            width : 100,     // 信息窗口宽度
+            height: 50,     // 信息窗口高度
+            title : "您选定的位置坐标" , // 信息窗口标题
+            enableMessage:true,//设置允许信息窗发送短息
+            message:"23333333"
+        };
+        var infoWindow = new BMap.InfoWindow(e.point.lng+','+e.point.lat, opts);  // 创建信息窗口对象
+        map.openInfoWindow(infoWindow,e.point); //开启信息窗口
+
+        var location=e.point.lng+','+e.point.lat;
+        return location;
+    }
+
+    map.addEventListener("click",showPoint);
+
+    // 编写自定义函数,创建标注
+    function addMarker(point){
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+    }
+
+//    var question8 = document.getElementById("question8");
+//    var list8 = question8.getElementsByTagName("li");
+//    var change8 = (1 / list8.length - 0.01);
+////    alert(change8);
+//    for (var i = 0; i < list8.length; i++){
+//        list8[i].style.width = change8;
+//    }
+
+</script>
+</body>
+</html>

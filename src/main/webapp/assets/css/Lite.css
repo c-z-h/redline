@@ -1,0 +1,27 @@
+.Lite_Query {
+    width: 100%;
+    height: auto;
+    margin: 5% 0 25% 0;
+}
+
+.Lite_Query .Main_Query {
+    width: 100%;
+    height: auto;
+    margin: 10% 0;
+}
+
+.Main_Query .query_select {
+    width: 15%;
+    height: 34px;
+    float: left;
+    margin-right: 2%;
+    padding-left: 8px;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+}
+.Lite_Query .Search {
+    width: 73%;
+    height: auto;
+    float: left;
+}

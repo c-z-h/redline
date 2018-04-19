@@ -1,0 +1,100 @@
+.feedback {
+    width: 100%;
+    height: 400px;
+    margin: 8% auto;
+    border: 1px solid whitesmoke;
+}
+
+.feedback span.title {
+    display: block;
+    width: 5em;
+    height: 1em;
+    position: relative;
+    top: -0.7em;
+    left: 3em;
+    text-align: center;
+    background: #494A5F;
+}
+
+.feedback .select_ques {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+
+.feedback .text_ques {
+    width: 50%;
+    height: auto;
+    float:left;
+}
+
+.feedback .ques1 {
+    width: 100%;
+    height: auto;
+    padding: 1em 0 0 2em;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.feedback .ques1 .ans {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 10px;
+}
+.feedback .ques1 span {
+    display: block;
+    width: 100%;
+    height: auto;
+    float: left;
+    text-align:left;
+}
+.feedback .ques1 .checkbox {
+    width: 32%;
+    height: auto;
+    float: left;
+    margin: 10px 0;
+    font-size:16px;
+}
+
+.feedback .ques2 {
+    width: 100%;
+    height: auto;
+    padding: 1em 0 0 2em;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.feedback .ques2 textarea {
+    width: 90%;
+}
+
+.feedback .submit {
+    width: 100%;
+    height: auto;
+    margin: 12% 0;
+}
+
+.feedback .submit .btn_submit {
+    width: 60%;
+    height: 5vh;
+    border-radius: 5px;
+    border: none;
+    font-size: 24px;
+    background-color: #2fa8ec;
+}
+
+.feedback h1 {
+    margin: 30px 0;
+}
+
+.feedback button {
+    display: block;
+    width: 30%;
+    height: 5vh;
+    margin: 60px auto;
+    background-color: #2fa8ec;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}

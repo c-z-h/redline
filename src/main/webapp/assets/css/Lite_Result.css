@@ -1,0 +1,103 @@
+#main-content {
+    padding: 1em 0 1em;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.Lite_Query {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 0 0 10%;
+    padding: 0 20px;
+}
+
+.Lite_Query h1 {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    float: left;
+    margin: 10% auto;
+}
+
+.Lite_Query .Main_Query {
+    width: 100%;
+    height: auto;
+    margin: 10% 0;
+    float: left;
+}
+
+.Main_Query .query_select {
+    width: 22%;
+    height: 34px;
+    float: left;
+    margin-right: 2%;
+    padding-left: 8px;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+.Main_Query .Search {
+    width: 70%;
+    height: auto;
+    float: left;
+}
+
+.Lite_Query .input-group-addon {
+}
+
+.Lite_Query .indicator_history {
+    width: 100%;
+    height: auto;
+}
+
+
+/*----------------------indicator_result-------------------------*/
+
+.indicator_result {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: 0 0 10%;
+    padding: 0 20px;
+    border-left: 1px #9c9c9c solid;
+}
+
+.query_result {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+
+    border: 1px whitesmoke solid;
+}
+
+.query_result span.title {
+    display: block;
+    width: 5.5em;
+    height: 1em;
+    position: relative;
+    top: -0.7em;
+    left: 2em;
+    text-align: center;
+    color: white;
+    background: #494A5F;
+}
+
+.query_result .result {
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+    padding: 5px 8px;
+    background: white;
+    border-radius: 3px;
+    text-align: justify;
+    color: #3755ad;
+}

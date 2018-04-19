@@ -1,0 +1,35 @@
+
+.contact {
+    width: 100%;
+    height: auto;
+    margin: 50px auto;
+}
+.contact .member_contact{
+    width: 98%;
+    height: auto;
+    font-size: 18px;
+    margin: 50px auto;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+}
+.contact .member_contact tr{
+    height: 50px;
+}
+.contact .member_contact th{
+    border: 1px solid #dcdcdc;
+    text-align: center;
+}
+.contact .member_contact td{
+    border: 1px solid #dcdcdc;
+}
+
+.contact .lab_contact {
+    width: 98%;
+    height: auto;
+    font-size: 18px;
+    margin: 50px auto;
+    text-align: center;
+}
+.contact .lab_contact tr{
+    height: 50px;
+}

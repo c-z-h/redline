@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css" media="all">
+    <link rel="stylesheet" href="css/Forum.css" />
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=8XLv1VeBt9bFblxkC0sVGbQ07A81hnX3" type="text/javascript"></script>
+    <title>生态红线</title>
+</head>
+<body>
+<div class="backtrans">
+    <div class="container">
+
+        <!-- header -->
+        <div class="header">
+            <div class="logo">
+                <a href="#"><img src="images/logo2.png" class="img-responsive" alt="" /></a>
+            </div>
+            <div class="header-left">
+                <div class="head-nav">
+                    <span class="menu"> </span>
+                    <ul class="cl-effect-1">
+                        <li><a href="index.html">首页</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li><a href="Members.html" style="padding:0 5px;">团队成员</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li><a href="ArticleSearch.html" style="padding:0 5px;">知识服务</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li class="active" style="padding:0 5px;"><a href="Forum.html" style="padding:0 5px;">论坛</a></li>
+                        <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                        <li><a href="Contact.html"style="padding:0 5px;">联系我们</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <!-- script-for-nav -->
+                <script>
+                    $( "span.menu" ).click(function() {
+                        $( ".head-nav ul" ).slideToggle(400, function() {
+                            // Animation complete.
+                        });
+                    });
+                </script>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <!-- header -->
+
+        <!-- Forum -->
+
+        <div class="Forum">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box" style="border: none;">
+                        <h3 class="clearfix" style="text-align: center;background-color: #f0f0f0;">
+                            <span style="color: #8f8f8f; font-size: medium;">文献高级查询</span>
+                        </h3>
+                    </div>
+                    <div class="box" style="margin-top: 36px;" >
+                        <h3>文献类型</h3>
+                        <div style="padding: 10px;">
+                            <span class="biaoq"><img src="images/Forum/u46.png" />term1</span>
+                            <span class="biaoq"><img src="images/Forum/u48.png" />term2</span>
+                            <span class="biaoq"><img src="images/Forum/u50.png" />term3</span>
+                            <span class="biaoq"><img src="images/Forum/u58.png" />term4</span>
+                            <span class="biaoq"><img src="images/Forum/u54.png" />term5</span>
+                            <span class="biaoq"><img src="images/Forum/u52.png" />term6</span>
+                            <span class="biaoq"><img src="images/Forum/u56.png" />term7</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3 class="clearfix">文献标签<span style="float: right;">更多</span></h3>
+                        <div class="paper-link">
+                            <a href="">PHP</a>
+                            <a href="">Java</a>
+                            <a href="">python</a>
+                            <a href="">css</a>
+                            <a href="">node.js</a>
+                            <a href="">ios</a>
+                            <a href="">android</a>
+                            <a href="">C++</a>
+                            <a href="">C</a>
+                            <a href="">mysql</a>
+                            <a href="">C#</a>
+                            <a href="">HTML5</a>
+                            <a href="">Linux</a>
+                            <a href="">Jquery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9" style="margin-bottom: 25px;">
+                    <div class="box" style="width: 100%;border: 0px;height: 50px;" >
+                        <div style="width: 100%;float: left;height: 33px;">
+                            <input  style="display: inline-block; width:80%;border: 1px #8f8f8f  solid;padding: 10px;"  placeholder=" 搜索你感兴趣的内容"/>
+                            <button class="search-btn btn" style="width: 20%;background-color:#8f8f8f ;float: right;height:42px;text-align:center;">搜索</button>
+                        </div>
+                        <!--<div style="width: 20%;background-color:#8f8f8f ;float: left;height:43px;text-align:center;">-->
+                            <!--<span style="width:100%;line-height:43px;color: #fff;font-size: 18px;" >搜索</span>-->
+                            <!--<button class="search-btn btn">搜索</button>-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="box" style="margin-top: 30px;">
+                        <div class="content">
+                            <dl class="clearfix">
+                                <dt class="clearfix pull-left">
+                                <p class="paper-image">
+                                    <a href="detail.html" style="text-decoration: none;">
+                                        <img class="" src="images/Forum/670974751893014737.jpg"  style="width: 50px;height: 50px;border-radius: 50%;" />
+                                        <span class="txb">孟小亮</span><span><img src="images/Forum/u54.png" style="width: 15px; height: 20px; " />专家</span>
+                                    </a>
+                                </p>
+                                </dt>
+                                <dd class="pull-right">
+                                    <span style="float: right;border: 1px #ccc solid;padding: 2px;height: 25px;width: 30px;text-align: center;">3</span><span style="float: right;border: 1px #ccc solid;padding: 2px;height: 25px;width: 25px;text-align:center;background-color:#f0f0f0;"><img  src="images/Forum/thumb.png" style="float: right;" /></span>
+                                    <span style="float: right;margin-right: 10px;">由EzioYu推荐</span>
+
+                                </dd>
+                                <div clas="bottom clearfix" style="margin-top: 60px;padding: 10px;" >
+                                    <p class="pull-left paper-desc">
+                                        孟小亮，博士，留美博士后，现任武汉大学国际软件学院副教授，珞珈青年学者，资源环境管理与数字技术国际联合实验室（www.jicredt.com）主任，中国地理信息产业协会教育与科普工作委员会副主任。毕业于武汉大学测绘遥感信息工程国家重点实验室，获摄影测量与遥感工学博士学位。留美三年，曾于美国东密歇根大学空间信息科学与教育研究所进行访问学者交流；并作为博士后研究人员参与美国航天航空局ICCaRS（探索气候变化与遥感）项目。主要研究兴趣为资源环境管理领域的空间信息服务、传感器网络、地理信息系统和遥感应用。主持国家自然科学基金、湖北省教学改革项目等多个纵横向课题，编撰《空间信息与传感器网络》专著，发表三大检索与核心级别以上文章二十余篇，曾获国际摄影测量与遥感协会（ISPRS）最佳青年作者奖。
+                                    </p>
+                                </div>
+                                <div style="padding: 10px;margin-top: 40px;">
+                                    <span>标签：</span><span class="jns">java</span><span class="jns">python</span><span class="jns">css</span>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="box" style="margin-top: 30px;">
+                        <div class="content">
+                            <dl class="clearfix">
+                                <dt class="clearfix pull-left">
+                                <p class="paper-image">
+                                    <a class="J_view paper-title" href="detail.html">
+                                        <img class="" src="images/Forum/670974751893014737.jpg"  style="width: 50px;height: 50px;border-radius: 50%;" />
+                                        <span class="txb">孟小亮</span><span><img src="images/Forum/u54.png" style="width: 15px; height: 20px; " />专家</span>
+                                    </a>
+                                </p>
+                                </dt>
+                                <dd class="pull-right">
+                                    <span style="float: right;border: 1px #ccc solid;padding: 2px;height: 25px;width: 30px;text-align: center;">3</span><span style="float: right;border: 1px #ccc solid;padding: 2px;height: 25px;width: 25px;text-align:center;background-color:#f0f0f0;"><img  src="images/Forum/thumb.png" style="float: right;" /></span>
+                                    <span style="float: right;margin-right: 10px;">由EzioYu推荐</span>
+
+                                </dd>
+                                <div clas="bottom clearfix" style="margin-top: 60px;padding: 10px;" >
+                                    <p class="pull-left paper-desc">
+                                        孟小亮，博士，留美博士后，现任武汉大学国际软件学院副教授，珞珈青年学者，资源环境管理与数字技术国际联合实验室（www.jicredt.com）主任，中国地理信息产业协会教育与科普工作委员会副主任。毕业于武汉大学测绘遥感信息工程国家重点实验室，获摄影测量与遥感工学博士学位。留美三年，曾于美国东密歇根大学空间信息科学与教育研究所进行访问学者交流；并作为博士后研究人员参与美国航天航空局ICCaRS（探索气候变化与遥感）项目。主要研究兴趣为资源环境管理领域的空间信息服务、传感器网络、地理信息系统和遥感应用。主持国家自然科学基金、湖北省教学改革项目等多个纵横向课题，编撰《空间信息与传感器网络》专著，发表三大检索与核心级别以上文章二十余篇，曾获国际摄影测量与遥感协会（ISPRS）最佳青年作者奖。
+                                    </p>
+                                </div>
+                                <div style="padding: 10px;margin-top: 40px;">
+                                    <span>标签：</span><span class="jns">java</span><span class="jns">python</span><span class="jns">css</span>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="box" style="margin-top: 30px;">
+                        <div class="content">
+                            <dl class="clearfix">
+                                <dt class="clearfix pull-left">
+                                <p class="paper-image">
+                                    <a class="J_view paper-title" href="detail.html">
+                                        <img class="" src="images/Forum/670974751893014737.jpg"  style="width: 50px;height: 50px;border-radius: 50%;" />
+                                        <span class="txb">孟小亮</span><span><img src="images/Forum/u54.png" style="width: 15px; height: 20px; " />专家</span>
+                                    </a>
+                                </p>
+                                </dt>
+                                <dd class="pull-right">
+                                    <span style="float: right;border: 1px #ccc solid;padding: 2px;height: 25px;width: 30px;text-align: center;">3</span><span style="float: right;border: 1px #ccc solid;padding: 2px;height: 25px;width: 25px;text-align:center;background-color:#f0f0f0;"><img  src="images/Forum/thumb.png" style="float: right;" /></span>
+                                    <span style="float: right;margin-right: 10px;">由EzioYu推荐</span>
+
+                                </dd>
+                                <div clas="bottom clearfix" style="margin-top: 60px;padding: 10px;" >
+                                    <p class="pull-left paper-desc">
+                                        孟小亮，博士，留美博士后，现任武汉大学国际软件学院副教授，珞珈青年学者，资源环境管理与数字技术国际联合实验室（www.jicredt.com）主任，中国地理信息产业协会教育与科普工作委员会副主任。毕业于武汉大学测绘遥感信息工程国家重点实验室，获摄影测量与遥感工学博士学位。留美三年，曾于美国东密歇根大学空间信息科学与教育研究所进行访问学者交流；并作为博士后研究人员参与美国航天航空局ICCaRS（探索气候变化与遥感）项目。主要研究兴趣为资源环境管理领域的空间信息服务、传感器网络、地理信息系统和遥感应用。主持国家自然科学基金、湖北省教学改革项目等多个纵横向课题，编撰《空间信息与传感器网络》专著，发表三大检索与核心级别以上文章二十余篇，曾获国际摄影测量与遥感协会（ISPRS）最佳青年作者奖。
+                                    </p>
+                                </div>
+                                <div style="padding: 10px;margin-top: 40px;">
+                                    <span>标签：</span><span class="jns">java</span><span class="jns">python</span><span class="jns">css</span>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div class="Forum">
+
+        <!-- Forum -->
+
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <!--</div>-->
+            <div class="foot-right">
+                <ul>
+                    <li><a href="#"><i class="fb"></i></a></li>
+                    <li><a href="#"><i class="twt"></i></a></li>
+                    <li><a href="#"><i class="in"></i></a></li>
+                    <li><a href="#"><i class="rss"></i></a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <i class="line"> </i>
+        <div class="footer-bottom">
+            <div class="foot-left">
+                <div class="foot-nav">
+                    <ul>
+                        <li class="active"><a href="index.jsp">首页</a></li> |
+                        <li><a href="about.html">团队成员</a></li> |
+                        <li><a href="services.html">服务</a></li> |
+                        <li><a href="download.jsp">下载中心</a></li> |
+                        <li><a href="contact.html">联系我们</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-right">
+                <p>@Copyright 武汉大学 资源环境管理与数字技术国际联合实验室</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+<!-- footer -->
+
+</body>
+

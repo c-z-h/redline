@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<script>
+		//居民问卷
+		function resident(){
+			var data={
+				//经度纬度 下同
+				"longitude":1.1,	"latitude":2.2,
+				//1~23题的选项 ABCDE对应012345
+				"Q1":0,				"Q2":0,
+				"Q3":0,				"Q4":0,
+				"Q5":0,				"Q6":0,
+				"Q7":0,				"Q8":0,
+				"Q9":0,				"Q10":0,
+				"Q11":0,			"Q12":0,
+				"Q13":0,			"Q14":0,
+				"Q15":0,			"Q16":0,
+				"Q17":0,			"Q18":0,
+				"Q19":0,			"Q20":0,
+				"Q21":0,			"Q22":0,
+				"Q23":0					
+			}
+			//地址以后再改 下同
+			$.post("residentquestionnaire",data,function(result){alert(result)});
+		}
+		//检测人员问卷
+		function monitor(){
+			var data={
+				"longitude":3.3,	"latitude":4.4,
+				//3~18题所填的值 （傻逼等菜给的从3开始的 
+				"Q3":1,				"Q4":1,
+				"Q5":1,				"Q6":1,
+				"Q7":1,				"Q8":1,
+				"Q9":1,				"Q10":1,
+				"Q11":1,			"Q12":1,
+				"Q13":1,			"Q14":1,
+				"Q15":1,			"Q16":1,
+				"Q17":1,			"Q18":1			
+			}
+			$.post("monitorquestionnaire",data,function(result){alert(result)});
+		}
+		//专家问卷
+		function expert(){
+			var data={
+				"longitude":5.5,	"latitude":6.6,
+				//专家的领域  资源生态学、生态经济学、保护生态学、农业生态学、林学、灾害学、环境科学对应1234567
+				"major":"M1",
+				//问题所填的值 资源生态学对应Q2~Q7,生态经济学对应Q8~Q10 以此类推
+				"Q2":1,				"Q3":1,
+				"Q4":1,				"Q5":1,
+				"Q6":1,				"Q7":1,				
+			}
+			$.post("expertquestionnaire",data,function(result){alert(result)});
+		}
+	</script>
+	<button onclick="resident()">居民</button>
+	<button onclick="monitor()">监测人员</button>
+	<button onclick="expert()">专家</button>
+</body>
+</html>

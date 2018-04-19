@@ -1,0 +1,102 @@
+.Forum {
+    width: 100%;
+    margin: 35px auto 0;
+}
+
+.box {
+    border: 1px solid #8f8f8f;
+    margin-bottom: 10px;
+    /*background: #ffffff;*/
+}
+
+.box .content {
+    padding: 25px 15px 0px;
+}
+
+.box h3 {
+    color: #6b6b6b;
+    height: 44px;
+    width: 100%;
+    line-height: 44px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #8f8f8f;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.search-btn {
+    background: none repeat scroll 0 0 #F04243;
+    border: 0 none;
+    border-radius: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 35px;
+    line-height: 33px;
+    padding: 0;
+    vertical-align: baseline !important;
+    width: 76px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+}
+
+.col-md-9 .box {
+    border-top: 1px solid #8f8f8f;
+    border-bottom: 1px solid #8f8f8f;
+    border-left: none;
+    border-right: none;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.txb {
+    padding: 10px;
+    margin-right: 10px;
+    color: #ccc;
+    border-right: 1px #ccc solid;
+    font-size: 15px;
+}
+
+.biaoq {
+    display: inline-block;
+    padding: 4px 6px;
+}
+
+.biaoq img {
+    width: 18px;
+    margin: 3px;
+}
+
+.paper-link {
+    padding: 15px;
+}
+
+.paper-link a {
+    margin-bottom: 6px;
+    display: inline-block;
+    background: #72C8fc;
+    padding: 4px 6px;
+    color: #008df2;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.jns {
+    margin-bottom: 6px;
+    display: inline-block;
+    background: #f8f8f8;
+    padding: 4px 6px;
+    color: #008df2;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 10px;
+}

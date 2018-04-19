@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=8XLv1VeBt9bFblxkC0sVGbQ07A81hnX3" type="text/javascript"></script>
+    <title>生态红线</title>
+</head>
+<body>
+    <div class="backtrans">
+            <div class="container">
+
+                    <!-- header -->
+                    <div class="header">
+                        <div class="logo">
+                            <a href="#"><img src="images/logo2.png" class="img-responsive" alt="" /></a>
+                        </div>
+                        <div class="header-left">
+                            <div class="head-nav">
+                                <span class="menu"> </span>
+                                <ul class="cl-effect-1">
+                                    <li class="active" style="padding:0 5px;"><a href="index.html">首页</a></li>
+                                    <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                                    <li><a href="Members.html" style="padding:0 5px;">团队成员</a></li>
+                                    <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                                    <li><a href="ArticleSearch.html" style="padding:0 5px;">知识服务</a></li>
+                                    <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                                    <li><a href="Forum.html" style="padding:0 5px;">论坛</a></li>
+                                    <div style="width: 1px; height:17px; margin-top: 5px; float:left; border: solid 1px #696969;"></div>
+                                    <li><a href="Contact.html"style="padding:0 5px;">联系我们</a></li>
+                                    <div class="clearfix"></div>
+                                </ul>
+                            </div>
+                            <!-- script-for-nav -->
+                            <script>
+                                $( "span.menu" ).click(function() {
+                                    $( ".head-nav ul" ).slideToggle(400, function() {
+                                        // Animation complete.
+                                    });
+                                });
+                            </script>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!-- header -->
+
+                    <!-- banner -->
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+                        </ol>
+
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="images/banner1.jpg" alt="First slide" style="width: 100%;">
+                            </div>
+                            <div class="item">
+                                <img src="images/banner2.jpg" alt="Second slide" style="width: 100%;">
+                            </div>
+                            <!--<div class="item">-->
+                                <!--<img src="images/banner3.jpg" alt="Third slide" style="width: 100%;">-->
+                            <!--</div>-->
+                        </div>
+                        <!-- 轮播（Carousel）导航 -->
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+                    </div>
+                    <!-- banner -->
+
+                    <!-- feature -->
+                    <div class="feature">
+                        <div class="col-md-8 feature-left" style="padding:0;">
+                            <h3 style="border-bottom: solid 2px #dcdcdc; font-size: 1.8em; padding:0 0 15px 15px; margin: 15px 0 15px 0;">神农架林区地图</h3>
+                            <div id="mapDiv" style="width:100%; height:295px;"></div>
+                            <script type="text/javascript">
+                                var map = new BMap.Map("mapDiv");          // 创建地图实例
+                                map.centerAndZoom(new BMap.Point(110.4921680000, 31.6274910000), 10);                 // 初始化地图，设置中心点坐标和地图级别
+                                //getBoundary("神农架林区","red");
+                                /*level: 距离(米)
+                                 22: 2;
+                                 21: 5;
+                                 20: 10;
+                                 19: 20;
+                                 18: 50;
+                                 17: 100;
+                                 16: 200;
+                                 15: 500;
+                                 14: 1000;
+                                 13: 2000;
+                                 12: 5000;
+                                 11: 10000;
+                                 10: 20000;
+                                 9: 25000;
+                                 8: 50000;
+                                 7: 100000;
+                                 6: 200000;
+                                 5: 500000;
+                                 4: 1000000;
+                                 3: 2000000;*/
+                                map.addControl(new BMap.NavigationControl());
+
+                                /*划定原本的生态红线区*/
+                                function getBoundary(name,color){
+                                    var bdary = new BMap.Boundary();
+                                    bdary.get(name, function(rs){//获得行政区域
+                                        console.log(rs);
+                                        map.clearOverlays();//清除地图覆盖物
+                                        var count = rs.boundaries.length;//行政区的点的个数
+                                        for(var i = 0; i < count; i++){
+                                            var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 1, strokeColor: "#ff0000",FillOpacity:0});//建立多边形覆盖物
+                                            ply.setFillColor(color);//设置多边形填充颜色
+                                            ply.setFillOpacity("0.2");//设置多边形透明度
+                                            map.addOverlay(ply);
+                                            if(ply.getPoints().length > maxNum){//每次循环将最多的点保存在maxPly中
+                                                maxNum = arrPts.length;
+                                                maxPly = ply;
+                                            }
+                                        }
+                                        if(maxPly){
+                                            map.setViewport(maxPly.getPoints());//调整视野
+                                        }
+                                    });
+                                }
+
+                                /*划定自己的生态红线区*/
+                                function getMyBoundary() {
+                                    map.clearOverlays();//清除地图覆盖物
+                                    /*//向服务器发送请求
+                                     var req=new XMLHttpRequest();
+                                     req.open("GET","",true);
+                                     req.onreadystatechange = function() {
+                                     if (req.readyState== 4) {
+
+                                     handlePoints(req.responseText);
+                                     }
+                                     };
+                                     req.send();*/
+                                    // 随机向地图添加25个标注
+                                    var bounds = map.getBounds();
+                                    var sw = bounds.getSouthWest();
+                                    var ne = bounds.getNorthEast();
+                                    var lngSpan = Math.abs(sw.lng - ne.lng);
+                                    var latSpan = Math.abs(ne.lat - sw.lat);
+                                    for (var i = 0; i < 25; i ++) {
+                                        var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
+                                        addMarker(point);
+                                    }
+                                }
+
+                                /*处理服务器传来的点*/
+                                function handlePoints(reponseText) {
+                                    obj=JSON.parse(reponseText);//将服务器传来的json转化为javascript对象
+                                    for(var i=0;i<obj.size();i++){
+                                        var point=new BMap.Point(obj.points.lon,obj.points.lat);
+                                        addMarker(point);
+                                    }
+                                }
+
+                                /*将点添加至图层*/
+                                function addMarker(point){
+                                    var myIcon=new BMap.Icon("images/red.png",new BMap.Size(5,5));
+                                    var marker = new BMap.Marker(point,{icon:myIcon});  // 创建标注
+                                    map.addOverlay(marker);              // 将标注添加到地图中
+                                }
+                            </script>
+
+                            <input type="button" id="btn_primary" onClick="getBoundary('神农架林区','red')" value="原来的生态红线" />
+                            <input type="button" id="btn_us" onClick="getMyBoundary()" value="我们划定的生态红线" />
+                            <h2 style="font-size:18px">生态红线</h2>
+                            <p>生态红线是为维护国家或区域生态安全和可持续发展，据生态系统完整性和连通性的保护需求，划定的需实施特殊保护的区域。生态保护红线的实质是生态环境安全的底线，目的是建立最为严格的生态保护制度，对生态功能保障、环境质量安全和自然资源利用等方面提出更高的监管要求，从而促进人口资源环境相均衡、经济社会生态效益相统一。</p>
+                        </div>
+                        <div class="col-md-4 our-right">
+                            <div style="margin: 0 0 0 3px;
+                                        position: absolute;
+                                        left: 2px;
+                                        top: 0px;
+                                        width: 98.5%;
+                                        height: auto;
+                                        border: solid;
+                                        border-width: 1px;
+                                        border-color: #dcdcdc;
+                                        -moz-border-radius: 0 3px 3px 0;
+                                        -webkit-border-radius: 0 3px 3px 0;
+                                        border-radius: 0 3px 3px 0;">
+                                <h4>调查问卷</h4>
+                                <hr style="margin:0; padding:0; width:100%; height:1px; background-color:#dcdcdc;" />
+                                <a href="questionnaire_supervise.html" style="text-decoration:none">
+                                    <p style="width: 95%; height: auto; margin: 0px auto 8px; padding:10px 10px; color: #000000; border-bottom: solid 1px #dcdcdc;">
+                                        <span style="font-size: 21px; display: inline-block; margin-bottom:5px;">监测人员问卷</span> <br>
+                                        <span style="color: #696969">
+                                            种类：生态环境类 <br>
+                                            本问卷主要面向：监测人员 <br>
+                                            开始时间：2017.7 <br>
+                                            结束时间：2017.9 <br>
+                                        </span>
+                                    </p>
+                                </a>
+                                <a href="questionnaire_resident.html" style="text-decoration:none">
+                                    <p style="width: 95%; height: auto; margin: 0px auto; padding:10px 10px; color: #000000; border-bottom: solid 1px #dcdcdc;">
+                                        <span style="font-size: 21px; display: inline-block; margin-bottom:5px;">居民问卷</span> <br>
+                                        <span style="color: #696969">
+                                            种类：生态环境类 <br>
+                                            本问卷主要面向：居民 <br>
+                                            开始时间：2017.7 <br>
+                                            结束时间：2017.9 <br>
+                                        </span>
+                                    </p>
+                                </a>
+                                <a href="#" style="text-decoration:none">
+                                    <p style="width: 95%; height: auto; margin: 0px auto 0; padding:10px 10px; color: #000000; border-bottom: solid 1px #dcdcdc;">
+                                        <span style="font-size: 21px; display: inline-block; margin-bottom:5px;">专家问卷</span> <br>
+                                        <span style="color: #696969">
+                                            种类：生态环境类 <br>
+                                            本问卷主要面向：专家 <br>
+                                            开始时间：2017.7 <br>
+                                            结束时间：2017.9 <br>
+                                        </span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <!-- download -->
+                    <div class="download">
+                        <div class="dow-top">
+                            <div class="dow">
+                                <h3>下载中心</h3>
+                            </div>
+                            <div class="dow-le">
+                                <h6></h6>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="nbs-flexisel-container">
+                            <div class="nbs-flexisel-inner">
+                                <ul id="flexiselDemo3">
+                                    <li onclick="javascript:window.open('download/DeepLearningBook.pdf');">
+                                        <div class="team1">
+                                            <div class="tm-left">
+                                                <img src="images/img6.jpg" class="img-responsive" alt="" />
+                                            </div>
+                                            <div class="tm-right">
+                                                <h5>2012-2012年神农架林区统计年鉴</h5>
+                                                <p>2012-2012年神农架林区统计年鉴... </p>
+                                                <p>标签: 环保, 年鉴</p>
+                                                <p>类别: <a href="#">政府文件</a></p>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </li>
+                                    <li onclick="javascript:window.open('download/新东方GRE佛脚词.pdf');">
+                                        <div class="team1">
+                                            <div class="tm-left">
+                                                <img src="images/img6.jpg" class="img-responsive" alt="" />
+                                            </div>
+                                            <div class="tm-right">
+                                                <h5>2013-江苏省生态红线区域保护规划</h5>
+                                                <p>2013-江苏省生态红线区域保护规划... </p>
+                                                <p>标签: 环保, 规划</p>
+                                                <p>类别: <a href="#">政府文件</a></p>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </li>
+                                    <li onclick="javascript:window.open('download/王道考研单科操作系统完整版.pdf');">
+                                        <div class="team1">
+                                            <div class="tm-left">
+                                                <img src="images/img6.jpg" class="img-responsive" alt="" />
+                                            </div>
+                                            <div class="tm-right">
+                                                <h5>2013-三中全会：划定生态红线 建立生态补偿制度</h5>
+                                                <p>2013-三中全会：划定生态红线 建立生态补偿制度... </p>
+                                                <p>标签: 环保, 制度</p>
+                                                <p>类别: <a href="#">政府文件</a></p>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </li>
+                                    <li onclick="javascript:window.open('download/王道考研单科操作系统完整版.pdf');">
+                                        <div class="team1">
+                                            <div class="tm-left">
+                                                <img src="images/img5.jpg" class="img-responsive" alt="" />
+                                            </div>
+                                            <div class="tm-right">
+                                                <h5>生态保护红线划定技术指南</h5>
+                                                <p>为贯彻落实《中华人民共和国环境保护法》《中共中央关于全面深化改革若干重大问题的决定》和... </p>
+                                                <p>标签: 环保, 指南</p>
+                                                <p>类别: <a href="#">政府文件</a></p>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </li>
+                                    <li onclick="javascript:window.open('download/王道考研单科操作系统完整版.pdf');">
+                                        <div class="team1">
+                                            <div class="tm-left">
+                                                <img src="images/img5.jpg" class="img-responsive" alt="" />
+                                            </div>
+                                            <div class="tm-right">
+                                                <h5>自动和半自动知识提取</h5>
+                                                <p>自动和半自动知识提取... </p>
+                                                <p>标签: 知识提取, 自动化</p>
+                                                <p>类别: <a href="#">论文</a></p>
+                                            </div>
+                                            <div class="clearfix"> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            $(window).load(function() {
+
+                                $("#flexiselDemo3").flexisel({
+                                    visibleItems: 3,
+                                    animationSpeed: 1000,
+                                    autoPlay: false,
+                                    autoPlaySpeed: 3000,
+                                    pauseOnHover: true,
+                                    enableResponsiveBreakpoints: true,
+                                    responsiveBreakpoints: {
+                                        portrait: {
+                                            changePoint:480,
+                                            visibleItems: 1
+                                        },
+                                        landscape: {
+                                            changePoint:640,
+                                            visibleItems: 2
+                                        },
+                                        tablet: {
+                                            changePoint:768,
+                                            visibleItems: 3
+                                        }
+                                    }
+                                });
+
+                            });
+                        </script>
+
+                    </div>
+                    <!-- downlod -->
+                    <!-- popular -->
+                </div>
+    </div>
+                    <!-- footer -->
+                    <div class="footer">
+                        <div class="container">
+                            <div class="footer-top">
+                                <!--</div>-->
+                                <div class="foot-right">
+                                    <ul>
+                                        <li><a href="#"><i class="fb"></i></a></li>
+                                        <li><a href="#"><i class="twt"></i></a></li>
+                                        <li><a href="#"><i class="in"></i></a></li>
+                                        <li><a href="#"><i class="rss"></i></a></li>
+                                        <div class="clearfix"> </div>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <i class="line"> </i>
+                            <div class="footer-bottom">
+                                <div class="foot-left">
+                                    <div class="foot-nav">
+                                        <ul>
+                                            <li class="active"><a href="index.jsp">首页</a></li> |
+                                            <li><a href="about.html">团队成员</a></li> |
+                                            <li><a href="services.html">服务</a></li> |
+                                            <li><a href="download.jsp">下载中心</a></li> |
+                                            <li><a href="contact.html">联系我们</a></li>
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="foot-right">
+                                    <p>@Copyright 武汉大学 资源环境管理与数字技术国际联合实验室</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+
+            </div>
+            <!-- footer -->
+
+</body>
+
+</html>
