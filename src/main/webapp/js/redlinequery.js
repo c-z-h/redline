@@ -24,7 +24,7 @@ function getBoundary(){
     
     
        
-    point=new BMap.Point();         
+    point0=new BMap.Point(); 
     $.post("SegmentServlet",
     {
         "xstart":xstart,
@@ -54,16 +54,32 @@ function getBoundary(){
             	i=0;
             	di=1;
             }
+            var x,y;
+            points[points.length]=points[0];
             for (var j=0;j<points.length;j++){
             	point.lat=parseFloat(points[i].latitude);
             	point.lng=parseFloat(points[i].longitude);
                 //将经纬度转换成屏幕位置
-            	pixel=map.pointToPixel(point);
+            	pixel0=map.pointToPixel(point);
             	if (j==0){
-            		ctx.moveTo(pixel.x, pixel.y);
+                    point.lat=parseFloat(points[i+di].latitude);
+                    point.lng=parseFloat(points[i+di].longitude);
+                    pixel1=map.pointToPixel(point);
+                    x=(pixel0.x+pixel1.x)/2;
+                    y=(pixel0.y+pixel1.y)/2;
+            		ctx.moveTo(x, y);
+                    pixel0.x=pixel1.x;
+                    pixel0.y=pixel1.y;
             	}
             	else{
-            		ctx.lineTo(pixel.x, pixel.y);
+                    point.lat=parseFloat(points[i+di].latitude);
+                    point.lng=parseFloat(points[i+di].longitude);
+                    pixel1=map.pointToPixel(point);
+                    x=(pixel0.x+pixel1.x)/2;
+                    y=(pixel0.y+pixel1.y)/2;
+            		ctx.quadraticCurveTo(pixel0.x, pixel0.y, x, y);
+                    pixel0.x=pixel1.x;
+                    pixel0.y=pixel1.y;           		
             	}
             	i+=di;
             }
