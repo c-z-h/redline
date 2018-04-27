@@ -73,11 +73,13 @@
     </ul>
     </div>
     </li>
-    <li class="sidebar-dropdown">
+    <li class="sidebar-dropdown active">
     <a href="#"><i class="fa fa-diamond"></i><span>知识图谱查询</span></a>
-    <div class="sidebar-submenu">
+    <div class="sidebar-submenu" style="display: block;">
     <ul>
-    <li><a href="knowledge_graph_search.html">知识图谱介绍</a></li>
+               <li><a href="knowledge_graph_search.html">知识库查询</a></li>
+               <li><a href="knowledgeService.html">知识库应用</a></li>
+               <li><a href="<%=path %>/Dictionary">知识库字典</a></li>
     </ul>
     </div>
     </li>
@@ -110,8 +112,15 @@
     <img src="media/img/logo.png" class="logo">
     </div>
     <div class="indicator" style="border-right: 1px #9c9c9c solid;width: 70%;">
-    <h1>知识图谱查询<a href="Knowledge?keyword=redline" style="color:white">（知识总览）</a></h1>
+<!-- 		<h1>知识图谱查询<a href="Knowledge?keyword=redline" style="color:white">（总览）</a></h1> -->
+<!--     <h3><a href="knowledgeDictionary.html" style="color:white">知识字典</a></h3> -->
+	
     <div class="Main_Search">
+    	<h3><span style="font-size:14px;">
+    	使用指南：
+    	左边是当前知识与其余知识的关系网图，蓝色节点为当前知识，点击相应的节点可展开对应知识关系网。
+    	右边是以表格的形式展示当前知识有直接父子关系的知识。
+    	</span></h3>
 	    <form action="Knowledge" method="get" id="search_form">
 		    <div class="RL_Query">
 			    <div>
@@ -134,16 +143,16 @@
 
     </div>
     </div>
-    <div class="indicator_result" style="border-left:0px #9c9c9c solid;width:30%;">
+    <div class="indicator_result" style="border-left:0px #9c9c9c solid;width:30%;margin:5% 0;height:auto;">
+    <h3 id="ontKey" style="color:white;">${ontology.ename}</h3>
     <div class="query_result" style='border:0px;'>
     <c:set var="list" value="${requestScope.entityList}"/>
-	<table class="table table-bordered">
-	<tr><th colspan="2" style="text-align:center;" id="ontKey">${ontology.ename}</th><tr>
-	<tr><td colspan="2" style="text-align:center;">${ontology.comment}</td><tr>
+	<ul class="list-group" style="color:black;">
+	<li class="list-group-item" style="color:#494A5F">${ontology.comment}</li>
     <c:forEach var="entity" items="${list}">
-	<tr><td><a href="Knowledge?keyword=${entity.ename}" style="color:gray">${entity.ename}</a></td><td>${entity.hierarchy}</td><tr>
+	<li class="list-group-item" style="background-color:#494A5F"><a href="Knowledge?keyword=${entity.ename}" style="color:white">${entity.ename}</a></li>
 	</c:forEach>
-	</table>
+	</ul>
 
 
     </div>

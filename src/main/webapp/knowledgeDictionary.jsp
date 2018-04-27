@@ -1,3 +1,10 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -70,9 +77,9 @@
     <a href="#"><i class="fa fa-diamond"></i><span>知识图谱查询</span></a>
     <div class="sidebar-submenu" style="display: block;">
     <ul>
-                                <li><a href="knowledge_graph_search.html">知识库查询</a></li>
-                                <li><a href="knowledgeService.html">知识库应用</a></li>
-                                <li><a href="Dictionary">知识库字典</a></li>
+                       <li><a href="knowledge_graph_search.html">知识库查询</a></li>
+                       <li><a href="knowledgeService.html">知识库应用</a></li>
+                       <li><a href="<%=path %>/Dictionary">知识库字典</a></li>
     </ul>
     </div>
     </li>
@@ -104,17 +111,22 @@
     <div class="img">
     <img src="media/img/logo.png" class="logo">
     </div>
-    <div class="indicator" style="border-right: 0px #9c9c9c solid;width: 100%;">
+    <div class="indicator_result" style="border-left:0px #9c9c9c solid;width:100%;">
+    <div class="query_result" style='border:0px;'>
+    <c:set var="list" value="${requestScope.entityList}"/>
+	<table class="table table-bordered" style="border:0px solid #ddd;">
+    <c:forEach var="entity" items="${list}" varStatus="status">
+    
+    	<c:if test="${status.count%4==0}">
+    		<td style='border:0px solid #ddd;padding:15px;'><a href="Knowledge?keyword=${entity.ename}" style="color:#ddd">${entity.comment}(${entity.ename })</a></td></tr><tr>
+    	</c:if>
+    	
+    	<c:if test="${status.count%4!=0}">
+    		<td style='border:0px solid #ddd;padding:15px;'><a href="Knowledge?keyword=${entity.ename}" style="color:#ddd">${entity.comment}(${entity.ename })</a></td>
+    	</c:if>
 
-    <div class="Main_Search">
-
-		<div id="chart">
-		<h3><span style="font-size:18px;">使用指南：在地图上点击右键即可显示当前地点应用，点击对应的条目使用应用。点击地图下方清除按钮可清除地图上所有图层。</span></h3>
-		<div class="">
-			<iframe src="knowledgeServicePart.html" width="100%" height="550" frameborder="0" scrolling="no" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-		</div>
-		</div>
-
+	</c:forEach>
+	</table>
     </div>
     </div>
 
