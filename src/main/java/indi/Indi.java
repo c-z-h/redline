@@ -49,6 +49,10 @@ public class Indi {
 		this.sys=sys;
 	}
 	
+	public Indi() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Indi(String name, double weight, String source){
 		this.setName(name);
 		this.setWeight(weight);

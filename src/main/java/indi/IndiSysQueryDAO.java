@@ -1,12 +1,18 @@
 package indi;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
 public class IndiSysQueryDAO extends JdbcDaoSupport{
 	RowMapper<IndiSys> sysRowMapper;
@@ -56,5 +62,29 @@ public class IndiSysQueryDAO extends JdbcDaoSupport{
 			syses.add(queryBySys(i.getSys()));
 		}
 		return syses;
+	}
+
+	public int insertSys(String name){
+		KeyHolder keyHolder=new GeneratedKeyHolder();
+		
+		String sql="insert into indisys(name) values(?)";
+		
+		try{			
+			getJdbcTemplate().update(new PreparedStatementCreator() {				
+				@Override
+				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+					PreparedStatement ps=con.prepareStatement(sql, new String[]{"id"});
+					ps.setString(1, name);
+					return ps;
+				}
+			}, keyHolder);
+			return keyHolder.getKey().intValue();
+		}
+		catch(DuplicateKeyException e){
+			return 0;
+		}
+		catch(Exception e){
+			return -1;
+		}
 	}
 }
