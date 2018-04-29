@@ -12,17 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 
+import lite.LiteQueryDAO;
+
 /**
  * Servlet implementation class IndiQueryServlet
  */
-@WebServlet("/Indi_Query_Result")
-public class IndiQueryServlet extends HttpServlet {
+@WebServlet("/IndiSys_Query_Result")
+public class IndiSysQueryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IndiQueryServlet() {
+    public IndiSysQueryServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,23 +43,28 @@ public class IndiQueryServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		WebApplicationContext context=ContextLoader.getCurrentWebApplicationContext();
-		IndiQueryDAO iDao=context.getBean(IndiQueryDAO.class);
+		IndiSysQueryDAO isDao=context.getBean(IndiSysQueryDAO.class);
+
+		String query=request.getParameter("query");
+		String content=request.getParameter("content");
 		
-		String id=request.getParameter("id");
-		String name=request.getParameter("name");
+		List<IndiSys> list=null;
 		
-		List<Indi> list=null;
+		if (query!=null && content!=null && content!="")
+			switch (query) {
+			case "sys":
+				list=isDao.queryBySys(content);
+				break;
+			case "indi":
+				list=isDao.queryByIndi(content);
+				break;
+			default:
+				break;
+			}
 		
-		if (id!=null && id!=""){
-			try{
-				int iid=Integer.parseInt(id);
-				list=iDao.queryById(iid);
-			}catch(Exception e){return;}
-		}
+		request.setAttribute("IndiSysList", list);
+		request.getRequestDispatcher("IndiSys_Query_Result.jsp").forward(request, response);
 		
-		request.setAttribute("IndiList", list);
-		request.setAttribute("name", name);
-		request.getRequestDispatcher("Indi_Query_Result.jsp").forward(request, response);
 	}
 
 }

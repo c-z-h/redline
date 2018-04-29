@@ -119,10 +119,10 @@
     <div class="indicator">
     <h1>指标体系查询</h1>
     <div class="Main_Search">
-	    <form action="Indicator_Query_Result" method="get" id="search_form">
+	    <form action="IndiSys_Query_Result" method="get" id="search_form">
 		    <select class="query_select" name="query">
-			    <option value="title">按指标体系名称查询</option>
-			    <option value="word">按关键词查询</option>
+			    <option value="sys">按指标体系名称查询</option>
+			    <option value="indi">按关键词查询</option>
 		    </select>
 		    <div class="Search">
 			    <div>
@@ -137,13 +137,12 @@
     </div>
     <div class="indicator_result">
     <div class="query_result">
-    <c:set var="IndiList" value="${requestScope.IndiList}"/>
-    <span class="title"> &nbsp; 查询结果：</span>
+    <span class="title"> &nbsp; ${name} ：</span>
     <c:forEach var="Indi" items="${IndiList}">
         <div class="result">
-        <span>${Indi.indiID}</span><br>
-        <span>等级：${Indi.indiRk}</span><br>
-        <span>代表词：${Indi.indiRptWd1}&nbsp;&nbsp;${indi.IndiRptWd2}&nbsp;&nbsp;${indi.IndiRptWd3}&nbsp;&nbsp;${indi.IndiRptWd4}&nbsp;&nbsp;${indi.IndiRptWd5}</span>
+	        <span>指标：${Indi.name}</span><br>
+	        <span>权重：${Indi.weight}</span><br>
+	        <span>来源：${Indi.source}</span><br>
         </div>
     </c:forEach>
 

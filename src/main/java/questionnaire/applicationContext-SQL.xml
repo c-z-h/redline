@@ -24,6 +24,9 @@
 	<bean id="indiQueryDAO" class="indi.IndiQueryDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	<bean id="indiSysQueryDAO" class="indi.IndiSysQueryDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 	<import resource="applicationContext-Questionnaire-Expert.xml"/>
 	<bean id="expertDAO" class="questionnaire.expert.ExpertQuestionnaireDAO">
 		<property name="dataSource" ref="dataSource" />

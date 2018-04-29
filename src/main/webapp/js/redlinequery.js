@@ -57,14 +57,15 @@ function getBoundary(){
             	di=1;
             }
             var x,y;
+            //为了闭合路径将第一个点复制到末尾
             points[points.length]=points[0];
             for (var j=0;j<points.length-1;j++){
             	pointPre.lat=parseFloat(points[i].latitude);
             	pointPre.lng=parseFloat(points[i].longitude);
-
-            	if (j==0){
+            	if (j==0){                    
                     pointNxt.lat=parseFloat(points[i+di].latitude);
                     pointNxt.lng=parseFloat(points[i+di].longitude);
+                    //前两个轮廓点的中点为起始点
                     pointDst.lat=(pointPre.lat+pointNxt.lat)/2;
                     pointDst.lng=(pointPre.lng+pointNxt.lng)/2;
                     pixelDst=map.pointToPixel(pointDst);
@@ -75,9 +76,11 @@ function getBoundary(){
             	else{
                     pointNxt.lat=parseFloat(points[i+di].latitude);
                     pointNxt.lng=parseFloat(points[i+di].longitude);
+                    //取两个轮廓点的中点为终点
                     pointDst.lat=(pointPre.lat+pointNxt.lat)/2;
                     pointDst.lng=(pointPre.lng+pointNxt.lng)/2;
                     pixelDst=map.pointToPixel(pointDst);
+                    //取前一个轮廓点为控制点
                     pixelCtl=map.pointToPixel(pointPre);
             		ctx.quadraticCurveTo(pixelCtl.x, pixelCtl.y, pixelDst.x, pixelDst.y);
                     pointPre.x=pointNxt.x;

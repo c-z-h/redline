@@ -56,7 +56,7 @@
     <servlet-name>GraphServlet</servlet-name>
     <url-pattern>/Graph</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>DictionaryServlet</servlet-name>
     <servlet-class>knowledgeGraph.DictionaryServlet</servlet-class>
   </servlet>

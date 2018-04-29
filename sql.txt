@@ -1,13 +1,13 @@
-guest表
-id		int 		pk ai
-ip		char(20)	nn
+indisys表
+id		int		pk ai
+name		char(20)	nn unique	名称
 
 indi表
 id		int		pk ai
-guest		int  		fk guest(id)
+sys		int		nn fk indisys(id)
 name		char(20)	nn
-parent		int				父指标
-weight		double		nn		占父指标的权重
+weight		double		nn		权重
+source		char(100)	
 
 questionee表
 id		int		pk ai
