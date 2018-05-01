@@ -103,15 +103,24 @@ public class AreaTest {
 	}
 
 	public AreaTest testFindBoundary(boolean debug) {
-		area.findBoundary();
 		if (debug){
-			for (int i=0;i<area.getxNum();i++){
-				for (int j=0;j<area.getyNum();j++){
-					System.out.print((area.boundPosMap[i][j]==true?1:0)+" ");
+			File file=new File("E:\\programme\\java\\erist_v2\\1.txt");
+			try {
+				FileWriter writer=new FileWriter(file);
+				for (int i=0;i<area.getxNum();i++){
+					for (int j=0;j<area.getyNum();j++){
+						writer.write(area.leveledPoints[i][j]?"1":"0");
+					}
+					writer.write("\n");
 				}
-				System.out.println();
+				writer.flush();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
+		
+		area.findBoundary();
 		return this;
 	}
 	
@@ -210,24 +219,27 @@ public class AreaTest {
 				.testToJSON(true);
 	}
 	
-	//交叉临界点
-	public void test2() throws Exception {
+	//读取文件
+	public String test2(double xStart, double xEnd, double yStart, double yEnd, int zoomLevel, String path) throws Exception {
 		AreaTest areaTest=new AreaTest();
-		List<EristPoint> list=new LinkedList<>();
-		EristPoint ep=new EristPoint(0, 0);
-		ep.setFinalWeight(1);
-		list.add(ep);
-		ep=new EristPoint(23, 23);
-		ep.setFinalWeight(1);
-		list.add(ep);
-		areaTest.setUp()
-				.testWeightByEPs(list, false)
+		List<EristPoint> list=PointReader.read(path);
+		areaTest.setUp();
+		areaTest.area.setParam(xStart, xEnd, yStart, yEnd, zoomLevel);
+		//areaTest.area.setParam(0, 16, 0, 16, 1);
+		areaTest.area.init();
+		areaTest.testWeightByEPs(list, false)
 				.testAvgWeights(false);
-		areaTest.area.points[11][12]=1;
-		areaTest.testLevelArea(true)
-				.testFindBoundary(false);
-		areaTest.testGetBoundarys(true)
-				.testToJSON(false);
+	
+		
+		areaTest.testLevelArea(false)
+				.testRemoveNegNoise(false)
+				.testRemovePosNoise(false)
+				.testFindBoundary(true);
+//		areaTest.testBoundaryTrack(0, 0, 7, false)
+//				.testRemoveBoundPosMapBFS(0, 0, false)
+		return areaTest.testGetBoundarys(false)
+				.testSampling(false)
+				.testToJSON(true);
 	}
 	
 	//双重孔

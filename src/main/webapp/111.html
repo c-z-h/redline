@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+	<title>Hello, World</title>  
+	<style type="text/css">  
+		html{height:100%}  
+		body{height:100%;margin:0px;padding:0px}  
+		#container{height:100%}  
+	</style>  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=8rxOkYNDcHgir77zeUPAu4Gf6xSengWo">
+	</script>
+</head>
+<body>
+	<div id="container"></div> 
+	<script src="js/redlinequery.js"></script> 
+	<script type="text/javascript">
+    
+    var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT});
+    map.addControl(mapType2); 
+    
+	function getSBoundary(){       
+		var bdary = new BMap.Boundary();
+		bdary.get("神农架林区", function(rs){       //获取行政区域			
+			var count = rs.boundaries.length; //行政区域的点有多少个
+			if (count === 0) {
+				alert('未能获取当前输入行政区域');
+				return ;
+			}
+          	var pointArray = [];
+			for (var i = 0; i < count; i++) {
+				var ply = new BMap.Polygon(rs.boundaries[i], {strokeColor: "red", strokeWeight: 2, fillOpacity:0.01}); //建立多边形覆盖物
+				map.addOverlay(ply);  //添加覆盖物
+				pointArray = pointArray.concat(ply.getPath());
+			}    
+			map.setViewport(pointArray);    //调整视野  
+            
+		});   
+	}
+	
+	function getPoints(){
+		$.post("111.txt",null,function(data){
+			var points=[];
+			points[0]=[];points[1]=[];points[2]=[];
+			strs=data.split('\n');
+			var ee,index;
+			for (i in strs){
+				if (strs[i][0]=='/') {ee=parseInt(strs[i].substr(1));}
+				else if ((index=strs[i].indexOf(','))>-1){
+					var lng=strs[i].substring(0,index);
+					var lat=strs[i].substring(index+2);
+					points[ee].push(new BMap.Point(lng, lat));
+				}				
+			}
+			var pointCollection0 = new BMap.PointCollection(points[0], {color:'red'});
+			pointCollection0.addEventListener('click', function (e) {
+		          alert('单击点的坐标为：' + e.point.lng + ', ' + e.point.lat);  // 监听点击事件
+		        });
+			map.addOverlay(pointCollection0); 
+			
+			var pointCollection1 = new BMap.PointCollection(points[1], {color:'yellow'});
+			pointCollection1.addEventListener('click', function (e) {
+		          alert('单击点的坐标为：' + e.point.lng + ', ' + e.point.lat);  // 监听点击事件
+		        });
+			map.addOverlay(pointCollection1); 
+			
+			var pointCollection2 = new BMap.PointCollection(points[2], {color:'green'});
+			pointCollection2.addEventListener('click', function (e) {
+		          alert('单击点的坐标为：' + e.point.lng + ', ' + e.point.lat);  // 监听点击事件
+		        });
+			map.addOverlay(pointCollection2); 
+		});
+	}
+
+	setTimeout(function(){
+		//getSBoundary();
+		//getPoints();
+	}, 0);
+
+    var marker = new BMap.Marker(new BMap.Point(110.509796, 31.589243), {enableMassClear: false});        // 创建标注    
+    map.addOverlay(marker)                // 将标注添加到地图中
+	marker.enableDragging();    
+	marker.addEventListener("dragend", function(e){    
+        alert("当前位置：" + e.point.lng + ", " + e.point.lat);    
+	})
+</script>
+
+</body>
+</html>

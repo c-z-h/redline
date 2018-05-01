@@ -22,13 +22,13 @@
 			<value>0.5</value>
 		</property>
 		<property name="xLevel">			
-			<value>0.1</value>
+			<value>0.03</value>
 		</property>
 		<property name="k">			
 			<value>2</value>
 		</property>
 		<property name="xZero">			
-			<value>0.2</value>
+			<value>0.06</value>
 		</property>
 		<property name="weightThreshold">			
 			<value>0.25</value>

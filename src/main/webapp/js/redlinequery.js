@@ -36,7 +36,7 @@ function getBoundary(){
         "zoomlevel":zoomlevel
     },
     function(data){
-        //设定填充颜色
+    	//设定填充颜色
         ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
         //开始路径
         ctx.beginPath();
@@ -44,11 +44,11 @@ function getBoundary(){
     	json=$.parseJSON(data);
         //遍历轮廓
         for (var k=0;k<json.bounds.length;k++){
-        	points=json.bounds[k].points;
+        	var points=json.bounds[k].points;
             var i,di;
             if(json.bounds[k].pos=='true'){
                 //外层轮廓，倒序连接
-            	i=points.length;
+            	i=points.length+1;
             	di=-1;
             }
             else{
@@ -57,8 +57,9 @@ function getBoundary(){
             	di=1;
             }
             var x,y;
-            //为了闭合路径将第一个点复制到末尾
+            //为了闭合路径将前两个点复制到末尾
             points[points.length]=points[0];
+            points[points.length]=points[1];
             for (var j=0;j<points.length-1;j++){
             	pointPre.lat=parseFloat(points[i].latitude);
             	pointPre.lng=parseFloat(points[i].longitude);
@@ -76,11 +77,11 @@ function getBoundary(){
             	else{
                     pointNxt.lat=parseFloat(points[i+di].latitude);
                     pointNxt.lng=parseFloat(points[i+di].longitude);
-                    //取两个轮廓点的中点为终点
+                    //取与下一个轮廓点的中点为终点
                     pointDst.lat=(pointPre.lat+pointNxt.lat)/2;
                     pointDst.lng=(pointPre.lng+pointNxt.lng)/2;
                     pixelDst=map.pointToPixel(pointDst);
-                    //取前一个轮廓点为控制点
+                    //取当前轮廓点为控制点
                     pixelCtl=map.pointToPixel(pointPre);
             		ctx.quadraticCurveTo(pixelCtl.x, pixelCtl.y, pixelDst.x, pixelDst.y);
                     pointPre.x=pointNxt.x;

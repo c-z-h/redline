@@ -44,6 +44,8 @@ public class SegmentServlet extends HttpServlet {
 		WeightingDAO wDao=context.getBean(WeightingDAO.class);
 		Area area=(Area)context.getBean(Area.class);
 		
+		String path=request.getSession().getServletContext().getRealPath("")+"111.txt";
+		
 		String json=null;
 		try{
 			double xStart=Double.parseDouble(request.getParameter("xstart"));
@@ -54,7 +56,7 @@ public class SegmentServlet extends HttpServlet {
 			area.setParam(xStart, xEnd, yStart, yEnd, zoomLevel-3);//百度地图最小的zoomlevel为3
 			
 			AreaTest areaTest=new AreaTest();
-			json=areaTest.test1(xStart, xEnd, yStart, yEnd, zoomLevel-3);
+			json=areaTest.test2(xStart, xEnd, yStart, yEnd, zoomLevel-3, path);
 		}
 		catch(Exception e){		
 			e.printStackTrace();
