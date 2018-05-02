@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/Indicator_Result.css">
+    <link href="https://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
+	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+	<script src="assets/js/custom.js"></script>
 </head>
 <body>
     <div class="page-wrapper toggled">
@@ -66,9 +73,9 @@
     </ul>
     </div>
     </li>
-    <li class="sidebar-dropdown active">
+    <li class="sidebar-dropdown">
     <a href="#"><i class="fa fa-diamond"></i><span>知识图谱查询</span></a>
-    <div class="sidebar-submenu" style="display: block;">
+    <div class="sidebar-submenu">
     <ul>
                                 <li><a href="knowledge_graph_search.html">知识库查询</a></li>
                                 <li><a href="knowledgeService.html">知识库应用</a></li>
@@ -76,7 +83,6 @@
     </ul>
     </div>
     </li>
-
     <li class="sidebar-dropdown">
     <a href="Feedback.html"><i class="fa fa-diamond"></i><span>反馈与问题</span></a>
     </li>
@@ -98,17 +104,14 @@
     <img src="media/img/logo.png" class="logo">
     </div>
     <div class="indicator" style="border-right: 0px #9c9c9c solid;width: 100%;">
+   
+		<div class="row">
+		  <div class="col-lg-12">
+		  	<h3><span style="font-size:18px;">指标体系添加成功！</span></h3>
+		  </div><!-- /.col-lg-12 -->	  
+		</div><!-- /.row -->
 
-    <div class="Main_Search">
-
-		<div id="chart">
-		<h3><span style="font-size:18px;">使用指南：在地图上点击右键即可显示当前地点应用，点击对应的条目使用应用。点击地图下方清除按钮可清除地图上所有图层。</span></h3>
-		<div class="">
-			<iframe src="knowledgeServicePart.html" width="100%" height="550" frameborder="0" scrolling="no" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-		</div>
-		</div>
-
-    </div>
+	 	
     </div>
 
     <script>
@@ -125,10 +128,6 @@
 
 
 
-<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/js/custom.js"></script>
+
 </body>
 </html>

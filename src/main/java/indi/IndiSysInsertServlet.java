@@ -47,37 +47,38 @@ public class IndiSysInsertServlet extends HttpServlet {
 		WebApplicationContext context=ContextLoader.getCurrentWebApplicationContext();
 		IndiSysQueryDAO isDao=context.getBean(IndiSysQueryDAO.class);
 		IndiQueryDAO iDao=context.getBean(IndiQueryDAO.class);
-		
-		response.setHeader("Content-type", "text/html;charset=UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out=response.getWriter();
-
-		String name=request.getParameter("name");
-		String indistr=request.getParameter("indis");
-		if (name!=null && indistr!= null && name!="" && indistr!=""){
-			int i=isDao.insertSys(name);
+		String indSys=request.getParameter("indicatorSystemName");
+		String indList=request.getParameter("indicatorList");
+		System.out.println(indSys);
+		System.out.println(indList);
+		JSONObject object=new JSONObject();
+		if (indSys!=null && !"".equals(indSys.trim())){
+			int i=isDao.insertSys(indSys);
+			object.put("status", i);
+			System.out.println(i);
 			switch(i){
 			case 0:
-				out.println("{result:false, comment:'体系名称重复'}");
+				object.put("say", "体系名称重复");
 				break;
 			case -1:
-				out.println("{result:false, comment:'something happened'}");
+				object.put("say", "服务器错误");
 				break;
 			default:
 				try{
-					List<Indi> indis=JSONArray.toList(JSONArray.fromObject(indistr), Indi.class);
+					List<Indi> indis=JSONArray.toList(JSONArray.fromObject(indList), Indi.class);
 					for (Indi indi : indis) {
 						indi.setSys(i);
 					}
 					int sum=iDao.insertIndis(indis);
-					out.println("{true, comment:插入成功"+sum+"个指标}");
+					object.put("say","插入成功"+sum+"个指标");
 				}
 				catch (Exception e) {
-					out.println("{result:false, comment:'something happened'}");
+					object.put("say", "服务器错误");
 				}
 			}
-		
 		}
+		response.setCharacterEncoding("utf-8");
+		response.getWriter().write(object.toString());
 	}
 
 }

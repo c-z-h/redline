@@ -20,7 +20,7 @@ import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.RDFReader;
 
-@WebServlet("/DictionaryServlet")
+@WebServlet("/Dictionary")
 public class DictionaryServlet extends HttpServlet{
 
 	public static final String NS = "http://www.semanticweb.org/administrator/ontologies/2018/3/untitled-ontology-30#";

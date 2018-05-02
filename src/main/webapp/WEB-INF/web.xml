@@ -40,30 +40,6 @@
     <servlet-name>Segment</servlet-name>
     <url-pattern>/Segment</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>KnowledgeServlet</servlet-name>
-    <servlet-class>knowledgeGraph.KnowledgeServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>KnowledgeServlet</servlet-name>
-    <url-pattern>/Knowledge</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>GraphServlet</servlet-name>
-    <servlet-class>knowledgeGraph.GraphServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GraphServlet</servlet-name>
-    <url-pattern>/Graph</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>DictionaryServlet</servlet-name>
-    <servlet-class>knowledgeGraph.DictionaryServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DictionaryServlet</servlet-name>
-    <url-pattern>/Dictionary</url-pattern>
-  </servlet-mapping>
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/applicationContext-*.xml,classpath*:*/applicationContext-*.xml</param-value>
