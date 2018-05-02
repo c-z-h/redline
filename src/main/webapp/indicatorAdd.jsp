@@ -274,7 +274,7 @@
 						  data:params,
 						  dataType:'json',
 						  type:"POST",
-						  url:"<%=path%>/IndiSys_Insert_Result",
+						  url:"IndiSys_Insert_Result",
 						  success: function(data) {
 							  if (data.status != '0' && data.status != '-1') {
 								  window.location.href="indicatorAddSuccess.html";
