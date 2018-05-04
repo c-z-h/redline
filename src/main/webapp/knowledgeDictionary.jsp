@@ -61,7 +61,8 @@
     <a href="#"><i class="fa fa-photo"></i><span>指标体系查询</span><span class="badge"></span></a>
     <div class="sidebar-submenu">
     <ul>
-    <li><a href="Indicator_Query.html">指标体系介绍<span class="badge"></span></a></li><li><a href="indicatorAdd.jsp">个性化指标体系服务： <span class="badge"></span></a></li>
+    <li><a href="Indicator_Query.html">指标体系介绍<span class="badge"></span></a></li>
+    <li><a href="indicatorAdd.jsp">个性化指标体系服务<span class="badge"></span></a></li>
     </ul>
     </div>
     </li>
@@ -79,7 +80,7 @@
     <ul>
                        <li><a href="knowledge_graph_search.html">知识库查询</a></li>
                        <li><a href="knowledgeService.html">知识库应用</a></li>
-                       <li><a href="<%=path %>/Dictionary">知识库字典</a></li>
+                       <li><a href="Dictionary">知识库字典</a></li>
     </ul>
     </div>
     </li>
