@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/Lite_Result.css">
 </head>
-<body style="overflow: hidden;">
+<body style="overflow: auto;">
     <div class="page-wrapper toggled">
     <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
@@ -118,7 +118,7 @@
     <img src="media/img/logo.png" class="logo">
     </div>
     <div class="Lite_Query">
-    <h1>文献查询</h1>
+    <h1><span style="font-size: 100%; padding: 0; font-weight: bolder;">文献查询&nbsp;<img src="images/wenhao.png" style="width: 20px; height: 20px;" data-toggle="tooltip" title="可根据标题等关键字搜索收录的相关权威文献，点击文献标题可查阅文献内容"></span></h1>                    
     <div class="Main_Query">
     <form action="Lite_Query_Result" method="get" id="search_form">
 	    <select class="query_select" name="query">
@@ -145,11 +145,11 @@
     <span class="title"> &nbsp; 查询结果：</span>
     <c:forEach var="Lite" items="${LiteList}">
         <div class="result">
-       		<span>${Lite.title}</span><br>
-	        <span>期刊名称：${Lite.book}</span><br>
-	        <span>发表年份：${Lite.year}</span><br>
-	        <span>作者：${Lite.au1} &nbsp; &nbsp;${Lite.au2}&nbsp; &nbsp;${Lite.au3}</span><br>
-	        <span>关键字: ${Lite.kwd1} &nbsp; &nbsp;${Lite.kwd2} &nbsp; &nbsp;${Lite.kwd3}</span>
+       		<span><a href="lite/${Lite.title}.pdf">${Lite.title}</a></span><br>
+	        <span>出处：${Lite.book}</span><br>
+	        <span>作者：${Lite.author}</span><br>
+	        <span>关键字: ${Lite.keyword}</span><br>
+	        <span>摘要: ${Lite._abstract}</span>
         </div>
     </c:forEach>
     </div>

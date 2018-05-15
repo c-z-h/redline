@@ -1,11 +1,16 @@
 package lite;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+import indi.Indi;
 
 public class LiteQueryDAO extends JdbcDaoSupport{
 	RowMapper<Lite> rowMapper;
@@ -15,16 +20,17 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 			new RowMapper<Lite>() {
 				@Override
 				public Lite mapRow(ResultSet rs, int rowNum) throws SQLException {
-					return new Lite(rs.getString("liteID"), rs.getString("bookID"), rs.getInt("liteY"),
-									rs.getString("liteAu1"), rs.getString("liteAu2"), rs.getString("liteAu3"),
-									rs.getString("liteKwd1"), rs.getString("liteKwd2"), rs.getString("liteKwd3"));
+					return 
+						new Lite(rs.getString("title"), rs.getString("author"), rs.getString("corp"),
+								rs.getString("book"), rs.getString("issn"), rs.getString("page"), rs.getString("abstract"),
+								rs.getString("keyword"), rs.getString("doi"));
 				}
 			};
 	}
 	
 	public List<Lite> queryByID(String id){
-		String sql="select liteID,bookID,liteY,liteAu1,liteAu2,liteAu3,liteKwd1,liteKwd2,liteKwd3 from lite "+
-					"where liteID like ?";
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+					"where title like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+id+"%"
 		}, rowMapper);
@@ -32,8 +38,8 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 
 	public List<Lite> queryByBook(String book){
-		String sql="select liteID,bookID,liteY,liteAu1,liteAu2,liteAu3,liteKwd1,liteKwd2,liteKwd3 from lite "+
-				"where bookID like ?";
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+				"where book like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+book+"%"
 		}, rowMapper);
@@ -41,30 +47,56 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	
 	public List<Lite> queryByYear(String yearStr) throws NumberFormatException{
 		int year=Integer.parseInt(yearStr);
-		String sql="select liteID,bookID,liteY,liteAu1,liteAu2,liteAu3,liteKwd1,liteKwd2,liteKwd3 from lite "+
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
 				"where liteY=?";
+		/*
 		return getJdbcTemplate().query(sql, new Object[] {
 				year
 		}, rowMapper);
+		*/
+		return new LinkedList<>();
 	}
 	
 	public List<Lite> queryByAuthor(String author){
-		String sql="select liteID,bookID,liteY,liteAu1,liteAu2,liteAu3,liteKwd1,liteKwd2,liteKwd3 from lite "+
-				"where liteAu1 like ? or liteAu2 like ? or liteAu3 like ?";
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+				"where author like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
-				"%"+author+"%",
-				"%"+author+"%",
-				"%"+author+"%",
+				"%"+author+"%"
 		}, rowMapper);
 	}
 	
 	public List<Lite> queryByKwd(String kwd){
-		String sql="select liteID,bookID,liteY,liteAu1,liteAu2,liteAu3,liteKwd1,liteKwd2,liteKwd3 from lite "+
-				"where liteKwd1 like ? or liteKwd2 like ? or liteKwd3 like ?";
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+				"where keyword like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
-				"%"+kwd+"%",
-				"%"+kwd+"%",
-				"%"+kwd+"%",
+				"%"+kwd+"%"
 		}, rowMapper);
+	}
+
+	public void insertLite(List<Lite> lites){
+		String sql="insert into lite(title,author,corp,book,issn,page,abstract,keyword,doi) values(?,?,?,?,?,?,?,?,?)";
+		int[] i=getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				// TODO Auto-generated method stub
+				Lite lite=lites.get(i);
+				ps.setString(1, lite.getTitle());
+				ps.setString(2, lite.getAuthor());
+				ps.setString(3, lite.getCorp());
+				ps.setString(4, lite.getBook());
+				ps.setString(5, lite.getIssn());
+				ps.setString(6, lite.getPage());
+				ps.setString(7, lite.get_abstract());
+				ps.setString(8, lite.getKeyword());
+				ps.setString(9, lite.getDoi());
+			}
+			
+			@Override
+			public int getBatchSize() {
+				// TODO Auto-generated method stub
+				return lites.size();
+			}
+		});
 	}
 }

@@ -8,6 +8,9 @@ map.enableScrollWheelZoom();
 //可以向地图添加多个控件。在本例中我们向地图添加一个平移缩放控件。在地图中添加控件后，它们即刻生效。
 map.addControl(new BMap.NavigationControl());     
 
+var mapType = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_SATELLITE_MAP]});
+map.addControl(mapType); 
+
 function getBoundary(){ 
 	var ctx = this.canvas.getContext("2d");
 	if (!ctx) return;
