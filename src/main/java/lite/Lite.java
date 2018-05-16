@@ -10,6 +10,7 @@ public class Lite {
 	private String _abstract;
 	private String keyword;
 	private String doi;
+	private String localurl;
 	public String getTitle() {
 		return title;
 	}
@@ -65,10 +66,17 @@ public class Lite {
 		this.doi = doi;
 	}
 
+	public String getLocalurl() {
+		return localurl;
+	}
+	public void setLocalurl(String localurl) {
+		this.localurl = localurl;
+	}
 	public Lite() {
 	}
 	
-	public Lite(String title, String author, String corp, String book, String issn, String page, String _abstract, String keyword, String doi){
+	public Lite(String title, String author, String corp, String book, String issn, 
+			String page, String _abstract, String keyword, String doi, String localurl){
 		this.title=title;
 		this.author=author;
 		this.corp=corp;
@@ -78,5 +86,7 @@ public class Lite {
 		this._abstract=_abstract;
 		this.keyword=keyword;
 		this.doi=doi;
+		if (localurl==null) this.localurl=title+".pdf";
+		else this.localurl=localurl;
 	}
 }

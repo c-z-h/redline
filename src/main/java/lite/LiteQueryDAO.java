@@ -23,13 +23,13 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 					return 
 						new Lite(rs.getString("title"), rs.getString("author"), rs.getString("corp"),
 								rs.getString("book"), rs.getString("issn"), rs.getString("page"), rs.getString("abstract"),
-								rs.getString("keyword"), rs.getString("doi"));
+								rs.getString("keyword"), rs.getString("doi"), rs.getString("localurl"));
 				}
 			};
 	}
 	
 	public List<Lite> queryByID(String id){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 					"where title like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+id+"%"
@@ -38,7 +38,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 
 	public List<Lite> queryByBook(String book){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where book like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+book+"%"
@@ -47,7 +47,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	
 	public List<Lite> queryByYear(String yearStr) throws NumberFormatException{
 		int year=Integer.parseInt(yearStr);
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where liteY=?";
 		/*
 		return getJdbcTemplate().query(sql, new Object[] {
@@ -58,7 +58,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 	
 	public List<Lite> queryByAuthor(String author){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where author like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+author+"%"
@@ -66,7 +66,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 	
 	public List<Lite> queryByKwd(String kwd){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi from lite "+
+		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where keyword like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+kwd+"%"

@@ -145,7 +145,7 @@
     <span class="title"> &nbsp; 查询结果：</span>
     <c:forEach var="Lite" items="${LiteList}">
         <div class="result">
-       		<span><a href="lite/${Lite.title}.pdf">${Lite.title}</a></span><br>
+       		<span><a href="lite/${Lite.localurl}">${Lite.title}</a></span><br>
 	        <span>出处：${Lite.book}</span><br>
 	        <span>作者：${Lite.author}</span><br>
 	        <span>关键字: ${Lite.keyword}</span><br>
