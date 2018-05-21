@@ -1,6 +1,7 @@
 package lite;
 
 public class Lite {
+	private int id;
 	private String title;
 	private String author;
 	private String corp;
@@ -11,6 +12,12 @@ public class Lite {
 	private String keyword;
 	private String doi;
 	private String localurl;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -75,8 +82,9 @@ public class Lite {
 	public Lite() {
 	}
 	
-	public Lite(String title, String author, String corp, String book, String issn, 
+	public Lite(int id, String title, String author, String corp, String book, String issn, 
 			String page, String _abstract, String keyword, String doi, String localurl){
+		this.id=id;
 		this.title=title;
 		this.author=author;
 		this.corp=corp;

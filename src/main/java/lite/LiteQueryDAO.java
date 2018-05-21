@@ -21,7 +21,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 				@Override
 				public Lite mapRow(ResultSet rs, int rowNum) throws SQLException {
 					return 
-						new Lite(rs.getString("title"), rs.getString("author"), rs.getString("corp"),
+						new Lite(rs.getInt("id"), rs.getString("title"), rs.getString("author"), rs.getString("corp"),
 								rs.getString("book"), rs.getString("issn"), rs.getString("page"), rs.getString("abstract"),
 								rs.getString("keyword"), rs.getString("doi"), rs.getString("localurl"));
 				}
@@ -29,7 +29,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 	
 	public List<Lite> queryByID(String id){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
+		String sql="select id,title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 					"where title like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+id+"%"
@@ -38,7 +38,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 
 	public List<Lite> queryByBook(String book){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
+		String sql="select id,title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where book like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+book+"%"
@@ -47,18 +47,17 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	
 	public List<Lite> queryByYear(String yearStr) throws NumberFormatException{
 		int year=Integer.parseInt(yearStr);
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
-				"where liteY=?";
-		/*
+		String sql="select id,title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
+				"where book like ?";
+		
 		return getJdbcTemplate().query(sql, new Object[] {
-				year
+				"%"+year+"%"
 		}, rowMapper);
-		*/
-		return new LinkedList<>();
+		
 	}
 	
 	public List<Lite> queryByAuthor(String author){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
+		String sql="select id,title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where author like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+author+"%"
@@ -66,11 +65,25 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 	
 	public List<Lite> queryByKwd(String kwd){
-		String sql="select title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
+		String sql="select id,title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
 				"where keyword like ?";
 		return getJdbcTemplate().query(sql, new Object[] {
 				"%"+kwd+"%"
 		}, rowMapper);
+	}
+	
+	//获取前n个点击量最大的
+	public List<Lite> limitByClick(int count){
+		String sql="select id,title,author,corp,book,issn,page,abstract,keyword,doi,localurl from lite "+
+				"order by click desc limit 0,?";
+		return getJdbcTemplate().query(sql, new Object[] {
+				count
+		}, rowMapper);
+	}
+
+	public void updateClick(int id){
+		String sql="update lite set click=1 where id=?";
+		getJdbcTemplate().update(sql, new Object[]{id});
 	}
 
 	public void insertLite(List<Lite> lites){

@@ -144,7 +144,7 @@
     <c:set var="LiteList" value="${requestScope.Litelist}"/>
     <span class="title"> &nbsp; 查询结果：</span>
     <c:forEach var="Lite" items="${LiteList}">
-        <div class="result">
+        <div class="result" bookid="${Lite.id}">
        		<span><a href="lite/${Lite.localurl}">${Lite.title}</a></span><br>
 	        <span>出处：${Lite.book}</span><br>
 	        <span>作者：${Lite.author}</span><br>
