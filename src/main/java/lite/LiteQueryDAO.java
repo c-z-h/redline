@@ -82,6 +82,7 @@ public class LiteQueryDAO extends JdbcDaoSupport{
 	}
 
 	public void updateClick(int id){
+		//实际+1的操作用数据库的触发器实现，只需提交一个update请求
 		String sql="update lite set click=1 where id=?";
 		getJdbcTemplate().update(sql, new Object[]{id});
 	}
